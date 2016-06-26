@@ -39,26 +39,30 @@ em {
 header {
   font-family: 'Athiti', sans-serif;
   font-size: 2.5em;
-}
 
-header h2 {
-  font-weight: 400;
+  p {
+    font-weight: 200;
+  }
+
+  h2 {
+    font-weight: 400;
+  }
 }
 
 nav {
   float: left;
   margin-top: 2.5em;
-}
 
-nav h4 {
-  font-weight: bold;
-}
+  h4 {
+    font-weight: bold;
+  }
 
-nav ul {
-  list-style-type: disc;
-  line-height: 1.4em;
-  margin: 1.5em;
-  color: #666;
+  ul {
+    list-style-type: disc;
+    line-height: 1.4em;
+    margin: 1.5em;
+    color: #666;
+  }
 }
 
 section {
@@ -67,22 +71,15 @@ section {
   padding-left: 2.5em;
   width: 40em;
   border-left: 0.1em dashed gray;
-}
 
-section h1 {
-  font-size: 1.5em;
-  font-family: 'Athiti', sans-serif;
-  font-weight: 400;
-}
+  h1 {
+    font-size: 1.5em;
+    font-family: 'Athiti', sans-serif;
+    font-weight: 400;
+  }
 
-section p {
-  line-height: 1.4em;
-  margin: 2em 0;
-}
-
-textarea {
-  font-family: Consolas, Menlo, monospace;
-  font-size: 0.8em;
-  background: #eee;
-  padding: 1em;
+  p {
+    line-height: 1.4em;
+    margin: 2em 0;
+  }
 }
