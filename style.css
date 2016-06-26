@@ -1,0 +1,88 @@
+html {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  border-top: 0.5em solid rgb(2, 200, 143);
+}
+
+body {
+  min-height: 100%;
+  border-left: 0.5em solid rgb(2, 200, 143);
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  font-weight: 300;
+}
+
+.main {
+  padding: 2.5em;
+}
+
+a {
+  color: black;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: 400;
+}
+
+em {
+  font-style: italic;
+}
+
+header {
+  font-family: 'Athiti', sans-serif;
+  font-size: 2.5em;
+}
+
+header h2 {
+  font-weight: 400;
+}
+
+nav {
+  float: left;
+  margin-top: 2.5em;
+}
+
+nav h4 {
+  font-weight: bold;
+}
+
+nav ul {
+  list-style-type: disc;
+  line-height: 1.4em;
+  margin: 1.5em;
+  color: #666;
+}
+
+section {
+  margin-left: 20em;
+  margin-top: 2.5em;
+  padding-left: 2.5em;
+  width: 40em;
+  border-left: 0.1em dashed gray;
+}
+
+section h1 {
+  font-size: 1.5em;
+  font-family: 'Athiti', sans-serif;
+  font-weight: 400;
+}
+
+section p {
+  line-height: 1.4em;
+  margin: 2em 0;
+}
+
+textarea {
+  font-family: Consolas, Menlo, monospace;
+  font-size: 0.8em;
+  background: #eee;
+  padding: 1em;
+}
