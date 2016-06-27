@@ -4,12 +4,12 @@ html {
   right: 0;
   bottom: 0;
   left: 0;
-  border-top: 0.5em solid rgb(2, 200, 143);
+  border-top: 0.5em solid #0c8;
 }
 
 body {
   min-height: 100%;
-  border-left: 0.5em solid rgb(2, 200, 143);
+  border-left: 0.5em solid #0c8;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -20,7 +20,7 @@ body {
 }
 
 a {
-  color: black;
+  color: #096;
   text-decoration: none;
 }
 
@@ -46,6 +46,10 @@ header {
 
   h2 {
     font-weight: 400;
+  }
+
+  a {
+    color: black;
   }
 }
 
