@@ -119,7 +119,7 @@ total = 0;
 # total: 6
 ```
 
-You may optionally provide an 'index' argument for the function:
+You may optionally provide an **index** argument for the function:
 
 ```ruby
 [1, 2, 3].each(function^ (element, index) {
@@ -127,7 +127,7 @@ You may optionally provide an 'index' argument for the function:
 });
 ```
 
-You may optionally provide an 'isPresent' argument for the function. This is to
+You may optionally provide an **isPresent** argument for the function. This is to
 cater for cases where the length of the array is undetermined until the program
 runs.
 
@@ -144,8 +144,8 @@ nestedArray[index].each(function^ (element, index, isPresent) {
 });
 ```
 
-In the example above, the value of 'index' is undetermined until the program
-runs. If a value of 0 is chosen, 'element' will be 0 and 'isPresent' will be
+In the example above, the value of **index** is undetermined until the program
+runs. If a value of 0 is chosen, **element** will be 0 and **isPresent** will be
 false when the second element is reached during iteration.
 
 ##### <a id="eachPair"></a> [eachPair](#eachPair)
@@ -160,8 +160,9 @@ Iterates through every combination of two-elements in the array:
   # left: 1, right: 3
   # left: 2, right: 3
 });
+```
 
-You may optionally provide 'index' and 'isPresent' arguments:
+You may optionally provide **index** and **isPresent** arguments:
 
 ```ruby
 [1, 2, 3].eachPair(function (l, r, lIndex, rIndex, lPresent, rPresent) {
@@ -232,7 +233,7 @@ Maps a function over each element in an array:
 #=> [1, 4, 9]
 ```
 
-You may optionally provide an 'index' argument for the function:
+You may optionally provide an **index** argument for the function:
 
 ```ruby
 [1, 2, 3].map(function (element, index) {
@@ -308,7 +309,7 @@ t = nestedArray.transpose
 # ]
 ```
 
-If this array is iterated, any gaps will set 'isPresent' to false. See
+If this array is iterated, any gaps will set **isPresent** to false. See
 [**each**](#each) for more information.
 
 ##### <a id="uniq?"></a> [uniq?](#uniq?)
