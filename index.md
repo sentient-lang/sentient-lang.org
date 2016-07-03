@@ -3,38 +3,28 @@ title: Sentient Programming Language
 header: Hello,
 layout: default
 ---
-<h1>Computer, here's my problem. Go figure.</h1>
+# Computer, here's my problem. Go figure.
 
-<p>
 The vast majority of programming languages used today are imperative. We
 tell computers precisely what to do and they slavishly obey. We rely on the
 ingenuity of programmers to come up with solutions and to translate their ideas
 into code.
-</p>
 
-<p>
-<strong>Sentient</strong> does things differently.
-</p>
+**Sentient** does things differently.
 
-<p>
 Sentient is an experimental programming language that lets you describe
-<em>what</em> your problem is and not <em>how</em> to solve it. Sentient
+*what* your problem is and not *how* to solve it. Sentient
 tries to figure that out for itself. It provides a rich toolkit to allow
 programmers to express their problems in a familiar way.
-</p>
 
-<p>
 Under the hood, it uses state-of-the-art
-<a href="http://baldur.iti.kit.edu/sat-competition-2016/">SAT solvers</a> to
-rapidly find solutions. This is an active field that's constantly improving and
-it means Sentient is decoupled from its solving processes. This enables Sentient
-to focus on the difficult problem of reducing high-level abstractions, used in
-modern programming languages, to SAT.
-</p>
+[SAT solvers](http://baldur.iti.kit.edu/sat-competition-2016/) to rapidly find
+solutions. This is an active field that's constantly improving and it means
+Sentient is decoupled from its solving processes. This enables Sentient to focus
+on the difficult problem of reducing high-level abstractions, used in modern
+programming languages, to SAT.
 
-<p>
 Sentient is written in JavaScript and is extremely portable. It can be used as a
 standalone application or as a dependency of other libraries and utilities.
 It can be extended to use different SAT solvers and supports a variety of
 solvers right out of the box.
-</p>
