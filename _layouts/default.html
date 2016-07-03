@@ -5,13 +5,13 @@
     <meta charset="utf-8">
     <title>{{ page.title }}</title>
     <link href="https://fonts.googleapis.com/css?family=Athiti:400,200|Open+Sans:300,300italic,400,400italic" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="{{ site.baseurl }}/style.css">
   </head>
   <body>
     <div class="main">
       <header>
         <p>{{ page.header }}</p>
-        <h2><a href="#">Sentient Lang.</a></h2>
+        <h2><a href="{{ site.baseurl }}/">Sentient Lang.</a></h2>
       </header>
 
       <nav>
@@ -33,10 +33,9 @@
 
         <h4>Language reference</h4>
         <ul>
-          <li><a href="#">Item 1</a></li>
-          <li><a href="#">Item 2</a></li>
-          <li><a href="#">Item 3</a></li>
-          <li><a href="#">Item 4</a></li>
+          <li><a href="{{ site.baseurl }}/reference/boolean">Boolean</a></li>
+          <li><a href="{{ site.baseurl }}/reference/integer">Integer</a></li>
+          <li><a href="{{ site.baseurl }}/reference/array">Array</a></li>
         </ul>
       </nav>
 
