@@ -1,9 +1,9 @@
 ---
-title: Array
-header: /reference
+title: "Standard library: Array methods"
+header: /library
 layout: default
 ---
-# Array
+# Array methods
 
 Arrays are one of three types in the Sentient programming language. This
 document contains a reference of all array operators and methods.

@@ -1,9 +1,9 @@
 ---
-title: Integer
-header: /reference
+title: "Standard library: Integer methods"
+header: /library
 layout: default
 ---
-# Integer
+# Integer methods
 
 Integers are one of three types in the Sentient programming language. This
 document contains a reference of all integer operators and methods.
@@ -147,7 +147,7 @@ total = 0;
 # total: 12
 ```
 
-This method only supports [integer literals](../specification/literals.md).
+This method only supports [integer literals](../library/literals).
 
 ##### <a id="even?"></a> [even?](#even?)
 
@@ -233,7 +233,7 @@ total = 0;
 # total: 10
 ```
 
-This method only supports [integer literals](../specification/literals.md).
+This method only supports [integer literals](../library/literals).
 
 ##### <a id="upto"></a> [upto](#upto)
 
@@ -249,7 +249,7 @@ total = 0;
 # total: 12
 ```
 
-This method only supports [integer literals](../specification/literals.md).
+This method only supports [integer literals](../library/literals).
 
 ##### <a id="zero?"></a> [zero?](#zero?)
 

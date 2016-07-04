@@ -1,9 +1,9 @@
 ---
-title: Boolean
-header: /reference
+title: "Standard library: Boolean methods"
+header: /library
 layout: default
 ---
-# Boolean
+# Boolean methods
 
 Booleans are one of three types in the Sentient programming language. This
 document contains a reference of all boolean operators and methods.
