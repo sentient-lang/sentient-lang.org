@@ -1,0 +1,50 @@
+@mixin lets-get-creative($width, $rotation) {
+  border: $width solid transparent;
+  border-image: linear-gradient(
+    $rotation,
+    #000000 // black
+    12%,
+    #E5CC4B // yellow
+    12%,
+    #E5CC4B // yellow
+    20%,
+    #AC1D0C // red
+    20%,
+    #AC1D0C // red
+    30%,
+    #EC8B20 // orange
+    30%,
+    #EC8B20 // orange
+    35%,
+    #666666 // darkgray
+    35%,
+    #666666 // darkgray
+    43%,
+    #18E08A // green
+    43%,
+    #18E08A // green
+    54%,
+    #434AFD // blue
+    54%,
+    #434AFD // blue
+    70%,
+    #01B7BA // teal
+    70%,
+    #01B7BA // teal
+    77%,
+    #F874F3 // pink
+    77%,
+    #F874F3 // pink
+    86%,
+    #68008D // purple
+    86%
+  );
+  border-image-slice: 1;
+}
+
+body {
+  @include lets-get-creative(0.3em, 180deg);
+  border-top: 0;
+  border-right: 0;
+  border-bottom: 0;
+}

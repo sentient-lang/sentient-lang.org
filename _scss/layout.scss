@@ -4,12 +4,10 @@ html {
   right: 0;
   bottom: 0;
   left: 0;
-  border-top: 0.5em solid #0c8;
 }
 
 body {
   min-height: 100%;
-  border-left: 0.5em solid #0c8;
   font-family: 'Open Sans', sans-serif;
   font-size: 18px;
   font-weight: 300;
@@ -20,7 +18,7 @@ body {
 }
 
 a {
-  color: #096;
+  color: #1017CA;
   text-decoration: none;
 }
 
@@ -66,6 +64,10 @@ nav {
 
   h4 {
     font-weight: bold;
+  }
+
+  a {
+    color: black;
   }
 }
 
