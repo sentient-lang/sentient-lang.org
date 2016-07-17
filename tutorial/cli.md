@@ -13,18 +13,16 @@ sentient --help
 
 This will present the various options provided by the executable. As you can
 see, Sentient supports the compilation and running of programs as well as a few
-other things, which we'll come to later. If you're curious about any of these,
-the `--help-verbose` option is especially useful.
+other things, which we'll come to later.
 
 ```
 Usage: sentient [options] [file]
 
-Sentient Language Compiler and Runtime, Version 0.0.0-alpha.30
+Sentient Language Compiler and Runtime, Version 0.0.0-alpha.34
 
 Options:
 
   -h, --help                output usage information
-  -H, --help-verbose        output usage information with explanation
   -v, --version             output the version number
   -c, --compile             compile a program to machine code
   -o, --optimise            optimise a compiled program
@@ -32,8 +30,8 @@ Options:
   -s, --source              output the source of a compiled program
   -e, --exposed             output exposed variables of a compiled program
   -a, --assign '<json>'     assign some of the exposed variables
-  -A, --assign-file <file>  read assignments from a file
-  -n, --number <n>          return the given number of solutions
+  -f, --assign-file <file>  read assignments from a file
+  -n, --number <n>          find the given number of solutions
   -m, --machine <name>      use the specified machine adapter
   -i, --info                set the log level to info
   -d, --debug               set the log level to debug
