@@ -1,6 +1,6 @@
 ---
-title: "Language specification: Expression"
-header: /specification
+title: "Language syntax: Expression"
+header: /syntax
 layout: default
 ---
 # Expression

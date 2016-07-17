@@ -1,6 +1,6 @@
 ---
-title: "Language specification: Comment"
-header: /specification
+title: "Language syntax: Comment"
+header: /syntax
 layout: default
 ---
 # Comment

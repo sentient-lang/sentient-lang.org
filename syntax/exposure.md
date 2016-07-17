@@ -1,6 +1,6 @@
 ---
-title: "Language specification: Exposure"
-header: /specification
+title: "Language syntax: Exposure"
+header: /syntax
 layout: default
 ---
 # Exposure

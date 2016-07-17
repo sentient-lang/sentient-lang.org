@@ -1,6 +1,6 @@
 ---
-title: "Language specification: Function"
-header: /specification
+title: "Language syntax: Function"
+header: /syntax
 layout: default
 ---
 # Function

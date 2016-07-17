@@ -1,6 +1,6 @@
 ---
-title: "Language specification: Declaration"
-header: /specification
+title: "Language syntax: Declaration"
+header: /syntax
 layout: default
 ---
 # Declaration

@@ -1,6 +1,6 @@
 ---
-title: "Language specification: Assignment"
-header: /specification
+title: "Language syntax: Assignment"
+header: /syntax
 layout: default
 ---
 # Assignment

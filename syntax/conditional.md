@@ -1,6 +1,6 @@
 ---
-title: "Language specification: Conditional"
-header: /specification
+title: "Language syntax: Conditional"
+header: /syntax
 layout: default
 ---
 # Conditional

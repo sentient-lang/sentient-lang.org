@@ -1,6 +1,6 @@
 ---
-title: "Language specification: Invariant"
-header: /specification
+title: "Language syntax: Invariant"
+header: /syntax
 layout: default
 ---
 # Invariant

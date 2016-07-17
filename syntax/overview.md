@@ -1,9 +1,9 @@
 ---
-title: "Language specification: Overview"
-header: /specification
+title: "Language syntax: Overview"
+header: /syntax
 layout: default
 ---
-# Language specification
+# Language syntax
 
 This section specifies the syntax of the Sentient programming language. It is
 intended to be informative and brief. Sentient programs are comprised of
