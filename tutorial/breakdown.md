@@ -20,7 +20,7 @@ This line [declares](../syntax/declaration) three integers named '**a**',
 invariant a + b + c == 10;
 ```
 
-This line captures what we are trying to do. We want to find thre enumbers that
+This line captures what we are trying to do. We want to find three numbers that
 add to **10** and this line specifies this an
 [invariant](../syntax/invariant) of the program, i.e. that this is
 something that must always be **true**.
