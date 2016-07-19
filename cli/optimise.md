@@ -18,5 +18,6 @@ clauses.
 
 Optimisation is **strongly recommended** for programs that are going to be run
 more than once or for programs that are going to be packaged for the web.
-
-Optimisation depends on the [Riss Coprocessor](TODO).
+Optimisation depends on [Riss's Coprocessor](../solvers/riss). Please note that
+it is **your responsibility** to ensure you comply with Riss's license if you
+intend to use Sentient's optimisation feature.
