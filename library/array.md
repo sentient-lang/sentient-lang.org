@@ -196,6 +196,29 @@ You may optionally provide **indexes** and **presence** arguments:
 
 See [**each**](#each) for more information on what these arguments mean.
 
+##### <a id="eachSlice"></a> [eachSlice](#eachSlice)
+
+Iterates through the array N elements at a time:
+
+```ruby
+[1, 2, 3, 4].eachSlice(2, function (elements) {
+  # Elements:
+  #
+  # [1, 2]
+  # [3, 4]
+});
+```
+
+You may optionally provide **indexes** and **presence** arguments:
+
+```ruby
+[1, 2, 3].eachSlice(2, function (elements, indexes, presence) {
+  # ...
+});
+```
+
+See [**each**](#each) for more information on what these arguments mean.
+
 ##### <a id="first"></a> [first](#first)
 
 Returns the first element in the array.
