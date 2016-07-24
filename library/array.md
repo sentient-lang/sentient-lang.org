@@ -148,24 +148,48 @@ In the example above, the value of **index** is undetermined until the program
 runs. If a value of 0 is chosen, **element** will be 0 and **isPresent** will be
 false when the second element is reached during iteration.
 
-##### <a id="eachPair"></a> [eachPair](#eachPair)
+##### <a id="eachCombination"></a> [eachCombination](#eachCombination)
 
-Iterates through every combination of two-elements in the array:
+Iterates through all combinations of N elements in the array:
 
 ```ruby
-[1, 2, 3].eachPair(function (left, right) {
-  # Combinations:
+[1, 2, 3].eachCombination(2, function (elements) {
+  # Elements:
   #
-  # left: 1, right: 2
-  # left: 1, right: 3
-  # left: 2, right: 3
+  # [1, 2]
+  # [1, 3]
+  # [2, 3]
 });
 ```
 
-You may optionally provide **index** and **isPresent** arguments:
+You may optionally provide **indexes** and **presence** arguments:
 
 ```ruby
-[1, 2, 3].eachPair(function (l, r, lIndex, rIndex, lPresent, rPresent) {
+[1, 2, 3].eachCombination(2, function (elements, indexes, presence) {
+  # ...
+});
+```
+
+See [**each**](#each) for more information on what these arguments mean.
+
+##### <a id="eachCons"></a> [eachCons](#eachCons)
+
+Iterates through consecutive elements in the array:
+
+```ruby
+[1, 2, 3, 4].eachCons(2, function (elements) {
+  # Elements:
+  #
+  # [1, 2]
+  # [2, 3]
+  # [3, 4]
+});
+```
+
+You may optionally provide **indexes** and **presence** arguments:
+
+```ruby
+[1, 2, 3].eachCons(2, function (elements, indexes, presence) {
   # ...
 });
 ```
