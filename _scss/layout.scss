@@ -73,6 +73,10 @@ nav {
     line-height: 1.4em;
     margin: 1.5em;
     color: #666;
+
+    a.current {
+      background: #ffc;
+    }
   }
 }
 

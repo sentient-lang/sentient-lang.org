@@ -4,11 +4,31 @@ var NavigationMenu = function () {
   var self = this;
 
   self.initialize = function () {
+    highlightCurrentLink();
     updateMenu();
     bindHandlers();
 
     $("nav").show();
     $("footer").show();
+  };
+
+  var highlightCurrentLink = function () {
+    $("nav a").each(function (index, anchor) {
+      if (anchor.href === window.location.href) {
+        $(anchor).addClass("current");
+        openSection(anchor);
+      }
+    });
+  };
+
+  var openSection = function (anchor) {
+    var list = $(anchor).closest("ul");
+    var header = list.prev();
+    var index = $("nav h4").index(header);
+
+    var visibility = loadVisibility();
+    visibility[index] = true;
+    saveVisibility(visibility);
   };
 
   var bindHandlers = function () {
