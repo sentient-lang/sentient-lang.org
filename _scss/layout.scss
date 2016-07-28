@@ -57,6 +57,11 @@ nav {
 
   h4 {
     font-weight: bold;
+    cursor: pointer;
+
+    &::before {
+      content: "> ";
+    }
   }
 
   a {
@@ -71,10 +76,15 @@ nav {
   }
 }
 
+.js nav {
+  display: none;
+}
+
 footer {
   clear: both;
   color: gray;
   padding-top: 1em;
+  display: none;
 }
 
 section {
