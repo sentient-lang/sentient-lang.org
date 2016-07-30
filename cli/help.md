@@ -12,7 +12,7 @@ $ sentient --help
 
   Usage: sentient [options] [file]
 
-  Sentient Language Compiler and Runtime, Version 0.0.0-alpha.34
+  Sentient Language Compiler and Runtime, Version 1.0.0
 
   Options:
 

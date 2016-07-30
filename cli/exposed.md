@@ -5,7 +5,8 @@ layout: default
 ---
 # \-\-exposed
 
-The 'exposed' option prints information about exposed variables:
+The 'exposed' option prints information about [exposed](../syntax/exposure)
+variables:
 
 ```
 $ sentient --exposed program.json
