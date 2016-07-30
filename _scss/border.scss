@@ -2,7 +2,7 @@
   border: $width solid transparent;
   border-image: linear-gradient(
     $rotation,
-    #000000 // black
+    #444444 // darkgray
     12%,
     #E5CC4B // yellow
     12%,
@@ -16,9 +16,9 @@
     30%,
     #EC8B20 // orange
     35%,
-    #666666 // darkgray
+    #666666 // gray
     35%,
-    #666666 // darkgray
+    #666666 // gray
     43%,
     #18E08A // green
     43%,
@@ -40,6 +40,13 @@
     86%
   );
   border-image-slice: 1;
+}
+
+html {
+  @include lets-get-creative(0.4em, 90deg);
+  border-left: 0;
+  border-right: 0;
+  border-bottom: 0;
 }
 
 body {
