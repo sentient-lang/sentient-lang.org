@@ -8,7 +8,7 @@ layout: default
 Alternatively, you can run Sentient in a browser with this script tag:
 
 ```html
-<script src="https://github.com/sentient-lang/sentient-lang/blob/gh-pages/bin/sentient.js"></script>
+<script src="https://sentient-lang.github.io/sentient-lang/bin/sentient.js"></script>
 ```
 
 Sentient is written in JavaScript and can be run anywhere that JavaScript runs.
