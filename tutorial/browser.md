@@ -12,7 +12,7 @@ Alternatively, you can run Sentient in a browser with this script tag:
 ```
 
 Sentient is written in JavaScript and can be run anywhere that JavaScript runs.
-The above script adds `Sentient` as a global variable, which can be used for
+The above script adds 'Sentient' as a global variable, which can be used for
 compiling and running programs.
 
 For now, this guide will continue to use the command-line tool, but it's useful

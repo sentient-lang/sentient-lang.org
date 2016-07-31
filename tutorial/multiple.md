@@ -6,7 +6,7 @@ layout: default
 # Multiple solutions
 
 We can instruct Sentient to find multiple solutions for this program with the
-`--number` option. Try running Sentient like so:
+'--number' option. Try running Sentient like so:
 
 ```bash
 sentient ten.snt --number 3
@@ -28,6 +28,6 @@ found all solutions:
 sentient ten.snt --number 0
 ```
 
-When you do this, the last line contains `{}`. This indicates that there are no
+When you do this, the last line contains '{}'. This indicates that there are no
 more solutions. You'd get the same result if you ran the program with
-`--number 999`.
+'--number 999'.
