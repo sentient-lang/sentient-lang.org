@@ -1,0 +1,16 @@
+#magic-square {
+  float: right;
+  width: 200px;
+  height: 200px;
+  cursor: pointer;
+  display: none;
+  background: #ffffde;
+  box-shadow: 0.1em 0.2em 0.8em #ddd;
+  border: 0.1em solid #ddd;
+  border-top-color: #eee;
+  border-radius: 0.2em;
+  margin: 0.5em 0.5em 0 0;
+  -ms-transform: rotate(1deg);
+  -webkit-transform: rotate(1deg);
+  transform: rotate(1deg);
+}

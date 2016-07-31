@@ -59,8 +59,8 @@ programming languages, to SAT.
 
 Sentient is written in JavaScript and is extremely portable. It can be used as a
 standalone application or as a dependency of other libraries and utilities.
-It can be extended to use different SAT solvers and supports a variety right out
-of the box.
+It can be extended to use different SAT solvers and supports a variety, right
+out of the box.
 
 Sentient was created by [Chris Patuzzo](https://twitter.com/cpatuzzo) out of
 curiosity about declarative programming.
