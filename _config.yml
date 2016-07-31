@@ -1,4 +1,3 @@
-baseurl: /website-v2
 exclude: ["CNAME", "Gemfile", "Gemfile.lock", "package.json", "Makefile"]
 sass:
   sass_dir: _scss
