@@ -314,9 +314,74 @@ Returns **true** if exactly one element causes the given function to return
 [1, 2, 3, 4].one?(*even?)    #=> false
 ```
 
+##### <a id="reduce"></a> [reduce](#reduce)
+
+Combines elements of an array by applying binary function. Returns the
+accumulated value.
+
+```ruby
+[2, 3, 4].reduce(function (accumulator, element) {
+  return accumulator * element;
+});
+#=> 24
+
+[1, 2, 3].reduce(*+)
+#=> 6
+```
+
+Reduce can optionally take an initial value:
+
+```ruby
+[1, 2, 3].reduce(10, *+)
+#=> 16
+```
+
+You may optionally provide an **index** and **isPresent** argument:
+
+```ruby
+[1, 2, 3].reduce(function (accumulator, element, index, isPresent) {
+  # ...
+});
+```
+
+See [**each**](#each) for more information on what these arguments mean.
+
+##### <a id="reverse"></a> [reverse](#reverse)
+
+Reverses an array:
+
+```ruby
+[1, 2, 3].reverse
+#=> [3, 2, 1]
+
+[[10], [20, 30]].reverse
+#=> [[20, 30], [10]]
+```
+
+##### <a id="self"></a> [self](#self)
+
+Returns the array:
+
+```ruby
+[1, 2, 3].self
+#=> [1, 2, 3]
+```
+
 ##### <a id="size"></a> [size](#size)
 
 Alias for [**length**](#length).
+
+##### <a id="sum"></a> [sum](#sum)
+
+Sums the elements in an array of integers:
+
+```ruby
+[1, 2, 3].sum
+#=> 6
+
+[[10], [20, 30]].map(*sum).sum
+#=> 60
+```
 
 ##### <a id="transpose"></a> [transpose](#transpose)
 

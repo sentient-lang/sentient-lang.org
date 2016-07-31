@@ -82,3 +82,12 @@ false.if(5, 3)    #=> 3
 
 Both the left and right expressions must be provided and will be evaluated,
 irrespective of the condition.
+
+##### <a id="self"></a> [self](#self)
+
+Returns the boolean.
+
+```ruby
+true.self
+#=> true
+```

@@ -203,6 +203,15 @@ Returns the integer's predecessor.
 
 Alias for [**pred**](#pred).
 
+##### <a id="self"></a> [self](#self)
+
+Returns the integer.
+
+```ruby
+123.self
+#=> 123
+```
+
 ##### <a id="square"></a> [square](#square)
 
 Returns the square of the integer.
