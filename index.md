@@ -44,6 +44,11 @@ invariant right_diagonal.sum == target;
 expose magic_square, target;
 ```
 
+<script>
+  SentientWebsite.loadSentient = true;
+  SentientWebsite.modulesToLoad.push("MagicSquare");
+</script>
+
 Under the hood, it uses state-of-the-art
 [SAT](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) solvers to
 rapidly find solutions. This is a field under

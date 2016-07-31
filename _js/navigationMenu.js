@@ -1,6 +1,6 @@
 "use strict";
 
-var NavigationMenu = function () {
+SentientWebsite.NavigationMenu = function () {
   var self = this;
 
   self.initialize = function () {
@@ -72,7 +72,3 @@ var NavigationMenu = function () {
     return JSON.parse(value || "{}");
   };
 };
-
-$(document).ready(function () {
-  new NavigationMenu().initialize();
-});
