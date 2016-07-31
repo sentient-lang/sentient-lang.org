@@ -5,7 +5,6 @@ SentientWebsite.MagicSquare = function () {
   var codeBlock = $("code");
 
   var compiledProgram;
-  var memo = {};
   var results = [];
 
   var currentSolution = 0;
@@ -18,8 +17,6 @@ SentientWebsite.MagicSquare = function () {
   var tolerance = 8;
 
   self.initialize = function () {
-    var source = codeBlock.text();
-
     $.getJSON("programs/magic_square.json", function (program) {
       compiledProgram = program;
       results = run(currentTarget);
@@ -30,7 +27,7 @@ SentientWebsite.MagicSquare = function () {
   var run = function (target) {
     var assignments = {
       target: target,
-      magic_square: {},
+      magic_square: {}
     };
 
     for (var i = 0; i < lockedCells.length; i += 1) {
@@ -53,7 +50,7 @@ SentientWebsite.MagicSquare = function () {
     });
 
     var last = results[results.length - 1];
-    if (typeof last["magic_square"] === "undefined") {
+    if (typeof last.magic_square === "undefined") {
       results.pop();
     }
 
@@ -70,7 +67,15 @@ SentientWebsite.MagicSquare = function () {
     renderSolutions(35, 30, 18, 10);
     renderTarget(gridX, gridY, cellSize, 18, 6);
     renderGrid(gridX, gridY, cellSize, 20, 5);
-    renderSums(gridX, gridY, cellSize, 10, 18, 6);
+
+    renderSums({
+      gridX: gridX,
+      gridY: gridY,
+      cellSize: cellSize,
+      arrowLength: 10,
+      fontSize: 18,
+      fontPadding: 6
+    });
 
     if (SentientWebsite.debug) {
       renderHandlers();
@@ -83,7 +88,7 @@ SentientWebsite.MagicSquare = function () {
     }
   };
 
-  var setupCanvas = function (container) {
+  var setupCanvas = function () {
     if (typeof canvas === "undefined") {
       var container = codeBlock.parent();
 
@@ -100,26 +105,26 @@ SentientWebsite.MagicSquare = function () {
     }
   };
 
-  var renderSolutions = function (leftX, topY, fontSize, arrowWidth) {
+  var renderSolutions = function (x, y, fontSize, arrowWidth) {
     context.save();
     context.font = fontSize + "px Open Sans";
 
     if (results.length === 0) {
-      context.fillText("   No solutions", leftX, topY);
+      context.fillText("   No solutions", x, y);
       return;
     } else {
       var text = "Solution " + pad(currentSolution + 1);
       text += " / " + pad(results.length);
 
-      context.fillText(text, leftX, topY);
+      context.fillText(text, x, y);
     }
 
-    var fontBaseline = topY + fontSize / 6;
+    var fontBaseline = y + fontSize / 6;
     var topY = fontBaseline - 0.85 * fontSize;
     var middleY = fontBaseline - 0.5 * fontSize;
     var bottomY = fontBaseline - 0.15 * fontSize;
 
-    var middleLeftX = leftX - 2 * arrowWidth;
+    var middleLeftX = x - 2 * arrowWidth;
     var topRightX = middleLeftX + arrowWidth;
     var bottomRightX = topRightX;
 
@@ -131,7 +136,7 @@ SentientWebsite.MagicSquare = function () {
     context.lineTo(bottomRightX, bottomY);
     context.fill();
 
-    var endX = canvas.width - leftX;
+    var endX = canvas.width - x;
     var middleRightX = endX + 2 * arrowWidth;
     var topLeftX = middleRightX - arrowWidth;
     var bottomLeftX = topLeftX;
@@ -186,17 +191,18 @@ SentientWebsite.MagicSquare = function () {
       eventHandlers.push({
         fromX: plusX, fromY: plusY - fontSize,
         toX: plusX + fontSize, toY: plusY,
-        fn: changeTarget, params: { direction: 1 },
+        fn: changeTarget, params: { direction: 1 }
       });
 
       eventHandlers.push({
         fromX: minusX, fromY: minusY - fontSize,
         toX: minusX + fontSize, toY: minusY,
-        fn: changeTarget, params: { direction: -1 },
+        fn: changeTarget, params: { direction: -1 }
       });
     }
-  }
+  };
 
+  /* jshint maxcomplexity:9 */
   var renderGrid = function (gridX, gridY, cellSize, fontSize, fontPadding) {
     context.save();
     context.font = fontSize + "px Open Sans";
@@ -212,7 +218,7 @@ SentientWebsite.MagicSquare = function () {
           number = lockedCells[index].number;
           color = "yellow";
         } else if (results.length !== 0) {
-          number = results[currentSolution]["magic_square"][i][j];
+          number = results[currentSolution].magic_square[i][j];
 
           var ratio = number / currentTarget;
           var normalised = ratio / 0.6;
@@ -266,7 +272,14 @@ SentientWebsite.MagicSquare = function () {
     context.restore();
   };
 
-  var renderSums = function (gridX, gridY, size, arrowLength, fontSize, fontPadding) {
+  var renderSums = function (params) {
+    var gridX = params.gridX;
+    var gridY = params.gridY;
+    var cellSize = params.cellSize;
+    var arrowLength = params.arrowLength;
+    var fontSize = params.fontSize;
+    var fontPadding = params.fontPadding;
+
     context.save();
     context.font = fontSize + "px Open Sans";
     context.fillStyle = "gray";
@@ -274,11 +287,11 @@ SentientWebsite.MagicSquare = function () {
     var startX, startY, midX, midY, endX, endY, fontX, fontY;
 
     for (var i = 0; i < 3; i += 1) {
-      startX = gridX + size * 3;
+      startX = gridX + cellSize * 3;
       endX = startX + arrowLength;
-      midY = gridY + (i + 0.5) * size;
+      midY = gridY + (i + 0.5) * cellSize;
       fontX = endX + fontPadding;
-      fontY = gridY + i * size + fontSize + fontPadding;
+      fontY = gridY + i * cellSize + fontSize + fontPadding;
 
       context.beginPath();
       context.moveTo(startX, midY);
@@ -289,10 +302,10 @@ SentientWebsite.MagicSquare = function () {
     }
 
     for (var j = 0; j < 3; j += 1) {
-      startY = gridY + size * 3;
+      startY = gridY + cellSize * 3;
       endY = startY + arrowLength;
-      midX = gridX + (j + 0.5) * size;
-      fontX = gridX + j * size + fontPadding;
+      midX = gridX + (j + 0.5) * cellSize;
+      fontX = gridX + j * cellSize + fontPadding;
       fontY = endY + fontSize + fontPadding;
 
       context.beginPath();
@@ -303,8 +316,8 @@ SentientWebsite.MagicSquare = function () {
       context.fillText(pad(currentTarget), fontX, fontY);
     }
 
-    var rightX = gridX + size * 3;
-    var bottomY = gridY + size * 3;
+    var rightX = gridX + cellSize * 3;
+    var bottomY = gridY + cellSize * 3;
     var diagonalLength = 0.8 * arrowLength;
 
     endX = rightX + diagonalLength;
@@ -360,7 +373,7 @@ SentientWebsite.MagicSquare = function () {
     }
 
     context.restore();
-  }
+  };
 
   var pad = function (number) {
     if (number < 10) {
@@ -368,7 +381,7 @@ SentientWebsite.MagicSquare = function () {
     } else {
       return number;
     }
-  }
+  };
 
   var handleEvent = function (event) {
     var coord = getCoordinate(event);
@@ -430,7 +443,7 @@ SentientWebsite.MagicSquare = function () {
       var result = results[currentSolution];
 
       if (typeof result !== "undefined") {
-        var number = result["magic_square"][x][y];
+        var number = result.magic_square[x][y];
         lockedCells.push({ x: x, y: y, number: number });
       } else {
         return;
