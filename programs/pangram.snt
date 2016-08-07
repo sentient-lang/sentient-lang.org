@@ -1,0 +1,97 @@
+function^ pangram () {
+  function^ main () {
+    array26<int7> sentenceSeed, letterCounts;
+
+    numberOfPlurals = letterCounts.countBy(*moreThanOne?);
+    lettersForEachNumber = letterCounts.map(*lettersForNumberWord);
+
+    numberOfEachLetter = lettersForEachNumber.transpose.map(*sum);
+    numberOfEachLetter = numberOfEachLetter.map(*addMandatoryLetter);
+    numberOfEachLetter = numberOfEachLetter.addArray(sentenceSeed);
+    numberOfEachLetter = numberOfEachLetter.addPlurals(numberOfPlurals);
+
+    invariant numberOfEachLetter == letterCounts;
+    invariant sentenceSeed.all?(*inBounds?);
+    invariant letterCounts.all?(*inBounds?);
+
+    expose sentenceSeed, letterCounts;
+  };
+
+  function moreThanOne? (n) {
+    return n > 1;
+  };
+
+  function^ lettersForNumberWord (n) {
+    return lookupTable[n - 1];
+  };
+
+  function addMandatoryLetter (n) {
+    return n + 1;
+  };
+
+  function addArray (self, other) {
+    return [self, other].transpose.map(*sum);
+  };
+
+  function addPlurals (self, numberOfPlurals) {
+    return self.map(function^ (n, index) {
+      return isPlural?(index) ? n + numberOfPlurals : n;
+    });
+  };
+
+  function isPlural? (index) {
+    return index == 18; # S
+  };
+
+  function^ inBounds? (n) {
+    return n >= 0 && n <= lookupTable.size;
+  };
+
+  main();
+};
+
+lookupTable = [
+ # A  B  C  D  E  F  G  H  I  J  K  L  M  N  O  P  Q  R  S  T  U  V  W  X  Y  Z
+  [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], # ONE
+  [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0], # TWO
+  [0, 0, 0, 0, 2, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0], # THREE
+  [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0, 0], # FOUR
+  [0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], # FIVE
+  [0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0], # SIX
+  [0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 1, 0, 0, 0, 0], # SEVEN
+  [0, 0, 0, 0, 1, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], # EIGHT
+  [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], # NINE
+  [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], # TEN
+  [0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0], # ELEVEN
+  [0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0], # TWELVE
+  [0, 0, 0, 0, 2, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 0, 0], # THIRTEEN
+  [0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0], # FOURTEEN
+  [0, 0, 0, 0, 2, 2, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], # FIFTEEN
+  [0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 1, 0, 0], # SIXTEEN
+  [0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 1, 0, 1, 0, 0, 0, 0], # SEVENTEEN
+  [0, 0, 0, 0, 3, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], # EIGHTEEN
+  [0, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0], # NINETEEN
+  [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 1, 0], # TWENTY
+  [0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 2, 1, 0, 0, 0, 0, 2, 0, 0, 1, 0, 1, 0], # TWENTY-ONE
+  [0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 3, 0, 0, 2, 0, 1, 0], # TWENTY-TWO
+  [0, 0, 0, 0, 3, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0, 0, 1, 0, 1, 0], # TWENTY-THREE
+  [0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 2, 1, 0, 1, 0, 1, 0], # TWENTY-FOUR
+  [0, 0, 0, 0, 2, 1, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 1, 0, 1, 0], # TWENTY-FIVE
+  [0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 2, 0, 0, 1, 1, 1, 0], # TWENTY-SIX
+  [0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 1, 2, 0, 1, 1, 0, 1, 0], # TWENTY-SEVEN
+  [0, 0, 0, 0, 2, 0, 1, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 3, 0, 0, 1, 0, 1, 0], # TWENTY-EIGHT
+  [0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 0, 0, 0, 3, 0, 0, 0, 0, 0, 2, 0, 0, 1, 0, 1, 0], # TWENTY-NINE
+  [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 1, 0], # THIRTY
+  [0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 1, 0, 2, 0, 0, 0, 0, 1, 0], # THIRTY-ONE
+  [0, 0, 0, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 3, 0, 0, 1, 0, 1, 0], # THIRTY-TWO
+  [0, 0, 0, 0, 2, 0, 0, 2, 1, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 3, 0, 0, 0, 0, 1, 0], # THIRTY-THREE
+  [0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 0, 0, 0, 1, 0, 0, 2, 0, 2, 1, 0, 0, 0, 1, 0], # THIRTY-FOUR
+  [0, 0, 0, 0, 1, 1, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 2, 0, 1, 0, 0, 1, 0], # THIRTY-FIVE
+  [0, 0, 0, 0, 0, 0, 0, 1, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 1, 2, 0, 0, 0, 1, 1, 0], # THIRTY-SIX
+  [0, 0, 0, 0, 2, 0, 0, 1, 1, 0, 0, 0, 0, 1, 0, 0, 0, 1, 1, 2, 0, 1, 0, 0, 1, 0], # THIRTY-SEVEN
+  [0, 0, 0, 0, 1, 0, 1, 2, 2, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 3, 0, 0, 0, 0, 1, 0], # THIRTY-EIGHT
+  [0, 0, 0, 0, 1, 0, 0, 1, 2, 0, 0, 0, 0, 2, 0, 0, 0, 1, 0, 2, 0, 0, 0, 0, 1, 0], # THIRTY-NINE
+  [0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 1, 0]  # FORTY
+];
+
+pangram();
