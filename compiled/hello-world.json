@@ -1,0 +1,91 @@
+{
+  "source": "int a, b, c;\n\ninvariant a + b + c == 10;\ninvariant a > 0, b > 0, c > 0;\n\nexpose a, b, c;",
+  "level3Variables": {
+    "a": {
+      "type": "integer",
+      "symbols": [
+        "$$$_L3_INTEGER1_$$$"
+      ]
+    },
+    "b": {
+      "type": "integer",
+      "symbols": [
+        "$$$_L3_INTEGER2_$$$"
+      ]
+    },
+    "c": {
+      "type": "integer",
+      "symbols": [
+        "$$$_L3_INTEGER3_$$$"
+      ]
+    }
+  },
+  "level2Variables": {
+    "$$$_L3_INTEGER1_$$$": {
+      "type": "integer",
+      "symbols": [
+        "$$$_L2_INTEGER1_BIT0_$$$",
+        "$$$_L2_INTEGER1_BIT1_$$$",
+        "$$$_L2_INTEGER1_BIT2_$$$",
+        "$$$_L2_INTEGER1_BIT3_$$$",
+        "$$$_L2_INTEGER1_BIT4_$$$",
+        "$$$_L2_INTEGER1_BIT5_$$$",
+        "$$$_L2_INTEGER1_BIT6_$$$",
+        "$$$_L2_INTEGER1_BIT7_$$$"
+      ]
+    },
+    "$$$_L3_INTEGER2_$$$": {
+      "type": "integer",
+      "symbols": [
+        "$$$_L2_INTEGER2_BIT0_$$$",
+        "$$$_L2_INTEGER2_BIT1_$$$",
+        "$$$_L2_INTEGER2_BIT2_$$$",
+        "$$$_L2_INTEGER2_BIT3_$$$",
+        "$$$_L2_INTEGER2_BIT4_$$$",
+        "$$$_L2_INTEGER2_BIT5_$$$",
+        "$$$_L2_INTEGER2_BIT6_$$$",
+        "$$$_L2_INTEGER2_BIT7_$$$"
+      ]
+    },
+    "$$$_L3_INTEGER3_$$$": {
+      "type": "integer",
+      "symbols": [
+        "$$$_L2_INTEGER3_BIT0_$$$",
+        "$$$_L2_INTEGER3_BIT1_$$$",
+        "$$$_L2_INTEGER3_BIT2_$$$",
+        "$$$_L2_INTEGER3_BIT3_$$$",
+        "$$$_L2_INTEGER3_BIT4_$$$",
+        "$$$_L2_INTEGER3_BIT5_$$$",
+        "$$$_L2_INTEGER3_BIT6_$$$",
+        "$$$_L2_INTEGER3_BIT7_$$$"
+      ]
+    }
+  },
+  "level1Variables": {
+    "$$$_L2_INTEGER1_BIT0_$$$": 1,
+    "$$$_L2_INTEGER1_BIT1_$$$": 2,
+    "$$$_L2_INTEGER1_BIT2_$$$": 3,
+    "$$$_L2_INTEGER1_BIT3_$$$": 4,
+    "$$$_L2_INTEGER1_BIT4_$$$": 5,
+    "$$$_L2_INTEGER1_BIT5_$$$": 6,
+    "$$$_L2_INTEGER1_BIT6_$$$": 7,
+    "$$$_L2_INTEGER1_BIT7_$$$": 8,
+    "$$$_L2_INTEGER2_BIT0_$$$": 9,
+    "$$$_L2_INTEGER2_BIT1_$$$": 10,
+    "$$$_L2_INTEGER2_BIT2_$$$": 11,
+    "$$$_L2_INTEGER2_BIT3_$$$": 12,
+    "$$$_L2_INTEGER2_BIT4_$$$": 13,
+    "$$$_L2_INTEGER2_BIT5_$$$": 14,
+    "$$$_L2_INTEGER2_BIT6_$$$": 15,
+    "$$$_L2_INTEGER2_BIT7_$$$": 16,
+    "$$$_L2_INTEGER3_BIT0_$$$": 17,
+    "$$$_L2_INTEGER3_BIT1_$$$": 18,
+    "$$$_L2_INTEGER3_BIT2_$$$": 19,
+    "$$$_L2_INTEGER3_BIT3_$$$": 20,
+    "$$$_L2_INTEGER3_BIT4_$$$": 21,
+    "$$$_L2_INTEGER3_BIT5_$$$": 22,
+    "$$$_L2_INTEGER3_BIT6_$$$": 23,
+    "$$$_L2_INTEGER3_BIT7_$$$": 24
+  },
+  "dimacs": "p cnf 34 72\n-17 0\n-9 0\n-1 0\n-18 0\n-19 0\n-20 0\n-10 0\n-2 0\n-11 0\n-3 0\n-12 0\n-4 0\n8 -16 24 0\n8 16 -24 0\n-8 -16 -24 0\n-8 16 24 0\n-8 -16 25 0\n8 -25 0\n16 -25 0\n7 -15 26 0\n7 15 -26 0\n-7 -15 -26 0\n-7 15 26 0\n-25 26 27 0\n25 26 -27 0\n-25 -26 -27 0\n25 -26 27 0\n6 -14 29 0\n6 14 -29 0\n-6 -14 -29 0\n-6 14 29 0\n-28 29 30 0\n28 29 -30 0\n28 -29 30 0\n-28 -29 31 0\n29 -31 0\n28 -31 0\n-13 32 0\n5 13 -32 0\n-5 32 0\n-32 33 0\n-5 -13 0\n-23 -24 27 0\n23 24 27 0\n-23 24 -27 0\n23 -24 -27 0\n-23 -27 34 0\n27 -34 0\n23 -34 0\n-21 -33 0\n-31 -32 0\n-31 33 0\n-25 -26 28 0\n22 30 -34 0\n-22 -30 -34 0\n-22 30 34 0\n22 -30 34 0\n13 14 15 16 0\n5 6 7 8 0\n-6 -14 33 0\n-6 -14 -32 0\n6 31 32 -33 0\n-7 -15 28 0\n7 25 -28 0\n15 25 -28 0\n7 26 -28 0\n21 22 33 34 0\n-21 -22 -30 0\n-22 -30 -33 0\n-21 -34 0\n-33 -34 0\n21 22 23 24 0\n"
+}
