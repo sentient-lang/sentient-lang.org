@@ -15,5 +15,5 @@ Sentient is written in JavaScript and can be run anywhere that JavaScript runs.
 The above script adds 'Sentient' as a global variable, which can be used for
 compiling and running programs.
 
-For now, this guide will continue to use the command-line tool, but it's useful
-to know that Sentient programs can be run anywhere!
+For now, this guide will continue to use the command-line interface, but it's
+useful to know that Sentient programs can be run anywhere!

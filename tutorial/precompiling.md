@@ -20,6 +20,6 @@ Sentient programs are compiled to JSON. You can run compiled programs like so:
 sentient ten.json --run
 ```
 
-One advantage of pre-compiling programs is that you can optimise them to run
-much faster. We won't get into that now because our program already runs
-quickly.
+One advantage of pre-compiling programs is that you can
+[optimise](../cli/optimise) them to run much faster. We won't get into that now
+because our program already runs quickly.

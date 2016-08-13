@@ -13,7 +13,7 @@ The following program finds three numbers that sum to 10.
 ## How does it work?
 
 This example is explained in [more detail](../tutorial/hello) in the
-[Getting started](../tutorial/introduction) guide.
+**Getting started** guide.
 
 ## CLI example
 

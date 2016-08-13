@@ -15,8 +15,7 @@ And that's it! That will install the 'sentient' executable which you can use for
 compiling and running Sentient programs.
 
 At present, Sentient is officially supported in **Node 0.11 or newer**, but it
-will probably work with older versions, too. You can check which version of Node
-you're running with:
+might work with older versions, too. You can check your Node version with:
 
 ```
 node --version

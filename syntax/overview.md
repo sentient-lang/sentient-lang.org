@@ -12,5 +12,5 @@ this section.
 
 For a more thorough understanding of the Sentient language, please refer to the
 documentation in the **Standard library** section as well as the **Examples**.
-It is recommended that you read the [Getting started](TODO) guide first, if you
-haven't already.
+It is recommended that you read the [Getting started](../tutorial/introduction)
+guide first, if you haven't already.
