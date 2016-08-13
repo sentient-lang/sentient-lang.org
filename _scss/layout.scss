@@ -130,16 +130,25 @@ section {
     line-height: 2em;
     margin: 2em 0;
   }
-}
 
-.highlight {
-  font-family: Consolas, Menlo, monospace;
-  font-size: 0.8em;
-  line-height: 1.4em;
-  background: #f7f7f7;
-  padding: 1em;
-  margin: 2em 0;
-  border: 0.1em solid #ddd;
-  border-radius: 0.2em;
-  overflow: auto;
+  blockquote {
+    line-height: 1.4em;
+    margin: 2em 0;
+    border-left: 0.5em solid rgba(0, 0, 0, 0.2);
+    padding-left: 1em;
+    color: rgba(0, 0, 0, 0.7);
+    font-style: italic;
+  }
+
+  .highlight {
+    font-family: Consolas, Menlo, monospace;
+    font-size: 0.8em;
+    line-height: 1.4em;
+    background: #f7f7f7;
+    padding: 1em;
+    margin: 2em 0;
+    border: 0.1em solid #ddd;
+    border-radius: 0.2em;
+    overflow: auto;
+  }
 }

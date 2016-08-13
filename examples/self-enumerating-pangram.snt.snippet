@@ -1,0 +1,37 @@
+function^ pangram () {
+  function^ main () {
+    array26<int7> sentenceSeed, letterCounts;
+
+    numberOfPlurals = letterCounts.countBy(*moreThanOne?);
+    lettersForEachNumber = letterCounts.map(*lettersForNumberWord);
+
+    numberOfEachLetter = lettersForEachNumber.transpose.map(*sum);
+    numberOfEachLetter = numberOfEachLetter.map(*addMandatoryLetter);
+    numberOfEachLetter = numberOfEachLetter.addArray(sentenceSeed);
+    numberOfEachLetter = numberOfEachLetter.addPlurals(numberOfPlurals);
+
+    invariant numberOfEachLetter == letterCounts;
+    invariant sentenceSeed.all?(*inBounds?);
+    invariant letterCounts.all?(*inBounds?);
+
+    expose sentenceSeed, letterCounts;
+  };
+
+  function moreThanOne? (n) {
+    return n > 1;
+  };
+
+  # ... more functions
+
+  main();
+};
+
+lookupTable = [
+  # Each index maps to an array of characters for that number-word, e.g.
+  #
+  # 1 -> O, N, E
+  # 2 -> T, W, O
+  # ...
+];
+
+pangram();
