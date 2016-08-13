@@ -82,6 +82,10 @@ nav {
 
 .js nav {
   display: none;
+
+  ul li {
+    display: none;
+  }
 }
 
 footer {
