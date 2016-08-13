@@ -1,0 +1,42 @@
+function main () {
+  array8<array2<int5>> queens;
+
+  queens.eachCombination(2, function (pair) {
+    invariant !attacking?(pair.first, pair.last);
+  });
+
+  queens.each(function^ (queen, index) {
+    invariant queen.row.between?(1, queens.length);
+    invariant queen.column.between?(1, queens.length);
+
+    # This rules out duplicate (permuted) solutions:
+    invariant queen.row == index + 1;
+  });
+
+  expose queens;
+};
+
+function attacking? (queen1, queen2) {
+  return queen1.row == queen2.row
+      || queen1.column == queen2.column
+      || queen1.leftDiagonal == queen2.leftDiagonal
+      || queen1.rightDiagonal == queen2.rightDiagonal;
+};
+
+function row (queen) {
+  return queen[0];
+};
+
+function column (queen) {
+  return queen[1];
+};
+
+function leftDiagonal (queen) {
+  return queen.row + queen.column;
+};
+
+function rightDiagonal (queen) {
+  return queen.row - queen.column;
+};
+
+main();

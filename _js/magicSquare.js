@@ -17,7 +17,7 @@ SentientWebsite.MagicSquare = function () {
   var tolerance = 8;
 
   self.initialize = function () {
-    $.getJSON("programs/magic_square.json", function (program) {
+    $.getJSON("/compiled/magic-square.json", function (program) {
       compiledProgram = program;
       results = run(currentTarget);
       render();
@@ -93,10 +93,10 @@ SentientWebsite.MagicSquare = function () {
       var container = codeBlock.parent();
 
       $(container).prepend(
-        "<canvas id='magic-square' width='200' height='200'></canvas>"
+        "<canvas id='magic-square-example' width='200' height='200'></canvas>"
       );
 
-      canvas = $("#magic-square")[0];
+      canvas = $("#magic-square-example")[0];
       context = canvas.getContext("2d");
       context.translate(0.5, 0.5);
       canvas.addEventListener("mousedown", handleEvent);

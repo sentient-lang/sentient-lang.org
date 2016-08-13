@@ -18,31 +18,7 @@ diagonals must add to the same 'target', but at no point do we write an
 algorithm to solve it.
 
 ```ruby
-array3<array3<int>> magic_square;
-int target;
-
-magic_square.each(function^ (row) {
-  invariant row.sum == target;
-  invariant row.all?(*positive?);
-});
-
-magic_square.transpose.each(function^ (column) {
-  invariant column.sum == target;
-});
-
-left_diagonal = magic_square.map(function (row, index) {
-  return row[index];
-});
-
-right_diagonal = magic_square.map(function (row, index) {
-  return row.reverse[index];
-});
-
-invariant left_diagonal.sum == target;
-invariant right_diagonal.sum == target;
-
-expose magic_square, target;
-```
+{% include_relative examples/magic-square.snt %}```
 
 <script>
   SentientWebsite.loadSentient = true;
