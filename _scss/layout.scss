@@ -15,6 +15,7 @@ body {
 
 .main {
   padding: 2.5em;
+  width: 62.5em;
 }
 
 a {
@@ -88,13 +89,6 @@ nav {
   }
 }
 
-footer {
-  clear: both;
-  color: gray;
-  padding-top: 1em;
-  display: none;
-}
-
 section {
   margin-left: 20em;
   margin-top: 2.5em;
@@ -150,5 +144,25 @@ section {
     border: 0.1em solid #ddd;
     border-radius: 0.2em;
     overflow: auto;
+  }
+}
+
+.clearfix {
+  clear: both;
+}
+
+footer {
+  color: #ccc;
+  border-top: 0.1em solid #eee;
+  margin-top: 6em;
+  padding-top: 2em;
+  display: none;
+
+  a {
+    color: #ccc;
+  }
+
+  p {
+    margin-left: 22.5em;
   }
 }

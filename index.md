@@ -6,16 +6,16 @@ layout: default
 # Computer, here's my problem. Go figure.
 
 Sentient is a
-[declarative](https://en.wikipedia.org/wiki/Declarative_programming) programming
+[high-level](intro/high-level), [declarative](intro/declarative) programming
 language that lets you describe *what* your problem is and not *how* to solve
 it. Sentient tries to figure that out for itself. It provides a rich toolkit to
 allow programmers to express their problems in a familiar way.
 
-The following example is a Sentient program that finds
-[magic squares](https://en.wikipedia.org/wiki/Magic_square). We describe the
+The following program finds
+[magic squares](https://en.wikipedia.org/wiki/Magic_square). We specify the
 constraints (or invariants) of the problem, i.e. that all rows, columns and
-diagonals must add to the same 'target', but at no point do we write an
-algorithm to solve it.
+diagonals must add to the same 'target'. We don't tell Sentient *how* to find
+magic squares, we just describe what they are.
 
 ```ruby
 {% include_relative examples/magic-square.snt %}```
@@ -25,18 +25,8 @@ algorithm to solve it.
   SentientWebsite.modulesToLoad.push("MagicSquare");
 </script>
 
-Under the hood, it uses state-of-the-art
-[SAT](https://en.wikipedia.org/wiki/Boolean_satisfiability_problem) solvers to
-rapidly find solutions. This is a field under
-[active development](http://baldur.iti.kit.edu/sat-competition-2016/) and it
-means Sentient is decoupled from its solving processes. This lets Sentient focus
-on the difficult problem of reducing high-level abstractions, used in modern
-programming languages, to SAT.
-
-Sentient is written in JavaScript and is extremely portable. It can be used as a
-standalone application or as a dependency of other libraries and utilities.
-It can be extended to use different SAT solvers and supports a variety, right
-out of the box.
-
-Sentient was created by [Chris Patuzzo](https://twitter.com/cpatuzzo) out of
-curiosity about declarative programming.
+The example above is running in **real-time** in your browser. Sentient is
+written in JavaScript and is extremely portable. It is an
+[experimental](intro/experimental) language that has been created by
+[Chris Patuzzo](https://twitter.com/cpatuzzo) as an exploration of declarative
+programming.
