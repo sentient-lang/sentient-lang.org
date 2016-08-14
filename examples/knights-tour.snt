@@ -1,0 +1,38 @@
+function main () {
+  array25<array2<int4>> knightsTour;
+
+  knightsTour.eachCons(2, function (move) {
+    from, to = move.first, move.last;
+    invariant validMove?(from, to);
+  });
+
+  invariant knightsTour.all?(*inBounds?);
+  invariant knightsTour.uniq?;
+
+  isClosed = validMove?(knightsTour.last, knightsTour.first);
+
+  expose knightsTour, isClosed;
+};
+
+function validMove? (from, to) {
+  xDelta = (from.x - to.x).abs;
+  yDelta = (from.y - to.y).abs;
+
+  return xDelta == 1 && yDelta == 2
+      || xDelta == 2 && yDelta == 1;
+};
+
+function inBounds? (coordinate) {
+  return coordinate.x.between?(1, 5)
+      && coordinate.y.between?(1, 5);
+};
+
+function x (coordinate) {
+  return coordinate.first;
+};
+
+function y (coordinate) {
+  return coordinate.last;
+};
+
+main();

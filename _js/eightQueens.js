@@ -31,7 +31,7 @@ SentientWebsite.EightQueens = function () {
       var container = codeBlock.parent();
 
       $(container).prepend(
-        "<canvas id='eight-queens-example' width='304' height='304'></canvas>"
+        "<canvas id='eight-queens-example' width='336' height='336'></canvas>"
       );
 
       canvas = $("#eight-queens-example")[0];
@@ -46,7 +46,7 @@ SentientWebsite.EightQueens = function () {
     context.save();
     context.fillStyle = "rgb(240, 217, 181)";
 
-    var size = 38;
+    var size = 42;
 
     for (var i = 0; i < 8; i += 1) {
       for (var j = 0; j < 8; j += 1) {
