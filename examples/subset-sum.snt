@@ -1,0 +1,10 @@
+array5<int> numbers;
+array5<bool> members;
+
+sum = 0;
+
+numbers.each(function^ (number, index) {
+  sum += members[index] ? number : 0;
+});
+
+expose numbers, members, sum;
