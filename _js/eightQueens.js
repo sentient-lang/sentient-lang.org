@@ -10,6 +10,7 @@ SentientWebsite.EightQueens = function () {
   self.initialize = function () {
     queenImage = new Image();
     queenImage.src = "/images/queen.png";
+    queenImage.onload = render;
 
     $.getJSON("/compiled/eight-queens.json", function (program) {
       results = Sentient.run({ program: program, number: 20 });
@@ -18,6 +19,10 @@ SentientWebsite.EightQueens = function () {
   };
 
   var render = function () {
+    if (typeof results === "undefined") {
+      return;
+    }
+
     setupCanvas();
     drawBoard();
 

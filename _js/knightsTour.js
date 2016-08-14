@@ -13,6 +13,7 @@ SentientWebsite.KnightsTour = function () {
   self.initialize = function () {
     knightImage = new Image();
     knightImage.src = "/images/knight.png";
+    knightImage.onload = render;
 
     $.getJSON("/compiled/knights-tour.json", function (program) {
       results = Sentient.run({
@@ -37,6 +38,10 @@ SentientWebsite.KnightsTour = function () {
   };
 
   var render = function () {
+    if (typeof results === "undefined") {
+      return;
+    }
+
     setupCanvas();
 
     drawBoard();
