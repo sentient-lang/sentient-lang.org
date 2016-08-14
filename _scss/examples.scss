@@ -1,9 +1,9 @@
 #magic-square-example {
+  display: none;
   float: right;
   width: 200px;
   height: 200px;
   cursor: pointer;
-  display: none;
   background: #ffffde;
   box-shadow: 0.1em 0.2em 0.8em #ddd;
   border: 0.1em solid #ddd;
@@ -13,4 +13,16 @@
   -ms-transform: rotate(1deg);
   -webkit-transform: rotate(1deg);
   transform: rotate(1deg);
+}
+
+#eight-queens-example {
+  display: none;
+  float: right;
+  background: rgb(181, 136, 99);
+  margin-top: 35em;
+  margin-right: 2em;
+  box-shadow: 0 0 0.5em #ddd;
+  border: 0.1em solid #ddd;
+  cursor: pointer;
+  border-radius: 0.1em;
 }

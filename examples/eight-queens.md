@@ -11,6 +11,13 @@ The following program solves the
 ```ruby
 {% include_relative eight-queens.snt %}```
 
+<script>
+  SentientWebsite.loadSentient = true;
+  SentientWebsite.modulesToLoad.push("EightQueens");
+</script>
+
+You can touch the chessboard on the right to cycle through different solutions.
+
 ## How does it work?
 
 We [declare](../syntax/declaration) an array of eight queens, which are

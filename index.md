@@ -27,6 +27,6 @@ magic squares, we just describe what they are.
 
 The example above is running in **real-time** in your browser. Sentient is
 written in JavaScript and is extremely portable. It is an
-[experimental](intro/experimental) language that has been created by
+[experimental](intro/experimental) language that was created by
 [Chris Patuzzo](https://twitter.com/cpatuzzo) as an exploration of declarative
 programming.

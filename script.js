@@ -8,5 +8,6 @@ new SentientWebsite.NavigationMenu().initialize();
 
 {% include_relative _js/moduleLoader.js %}
 {% include_relative _js/magicSquare.js %}
+{% include_relative _js/eightQueens.js %}
 
 new SentientWebsite.ModuleLoader().initialize();
