@@ -384,6 +384,8 @@ SentientWebsite.MagicSquare = function () {
   };
 
   var handleEvent = function (event) {
+    event.preventDefault();
+
     var coord = getCoordinate(event);
 
     if (handleWithTolerance(coord, 0)) {
