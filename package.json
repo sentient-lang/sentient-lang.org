@@ -1,7 +1,7 @@
 {
   "private": true,
   "devDependencies": {
-    "sentient-lang": "^0.0.0-alpha.38",
+    "sentient-lang": "^0.0.0-alpha.40",
     "jshint": "^2.9.2"
   }
 }
