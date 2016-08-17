@@ -20,7 +20,7 @@ You can touch the chessboard on the right to try a different tour.
 
 ## How does it work?
 
-We [declare](../syntax/declaration) an array of 64 elements to hold the
+We [declare](../syntax/declaration) an array of 25 elements to hold the
 coordinates of the tour. We iterate through
 [eachConsecutive](../library/array#eachCons) pair of coordinates and specify
 that it must be valid to go between them. The 'validMove?' function checks if
