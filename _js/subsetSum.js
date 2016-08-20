@@ -71,6 +71,7 @@ SentientWebsite.SubsetSum = function () {
       renderHandlers();
     }
 
+    bindPaperclip();
     registeredHandlers = true;
 
     if (!$(canvas).is(":visible")) {
@@ -96,6 +97,7 @@ SentientWebsite.SubsetSum = function () {
     }
   };
 
+  /* jshint maxcomplexity:20 */
   var renderGrid = function (gridX, gridY, cellSize, fontSize, fontPadding) {
     context.save();
     context.font = fontSize + "px Open Sans";
@@ -107,7 +109,11 @@ SentientWebsite.SubsetSum = function () {
         var index = j * 5 + i;
         var member;
 
-        if (typeof result !== "undefined") {
+        if (self.animating && self.frame[j][i]) {
+          member = true;
+        } else if (self.animating) {
+          member = false;
+        } else if (typeof result !== "undefined") {
           member = result.members[index];
         } else {
           member = false;
@@ -116,7 +122,11 @@ SentientWebsite.SubsetSum = function () {
         var x = gridX + i * cellSize;
         var y = gridY + j * cellSize;
 
-        if (member) {
+        if (member && self.animating) {
+          context.fillStyle = self.swap ? "black" : "lime";
+        } else if (self.animating) {
+          context.fillStyle = self.swap ? "yellow" : "black";
+        } else if (member) {
           context.fillStyle = "#ffa";
         } else {
           context.fillStyle = "#f6f6f6";
@@ -129,11 +139,19 @@ SentientWebsite.SubsetSum = function () {
 
         var number = numbers[index];
 
+        var text;
+        if (self.animating) {
+          text = self.animationText[j][i];
+          number = 1;
+        } else {
+          text = number;
+        }
+
         var fontX = x + fontPadding + textOffset(number, fontSize);
         var fontY = y + fontSize + fontPadding;
 
         context.fillStyle = "black";
-        context.fillText(number, fontX, fontY);
+        context.fillText(text, fontX, fontY);
       }
     }
 
@@ -158,7 +176,9 @@ SentientWebsite.SubsetSum = function () {
     var fontX = x + fontPadding + textOffset(sum, fontSize);
     var fontY = y + fontSize + fontPadding;
 
-    context.fillText(sum, fontX, fontY);
+    if (!self.animating) {
+      context.fillText(sum, fontX, fontY);
+    }
 
     var plusX = fontX + fontPadding / 2 - textOffset(sum, fontSize);
     var plusY = fontY - fontSize - fontPadding;
@@ -168,10 +188,20 @@ SentientWebsite.SubsetSum = function () {
     context.font = (fontSize * 1.3) + "px Open Sans";
 
     context.fillStyle = "#AC1D0C";
-    context.fillText("+", plusX, plusY);
+
+    if (self.animating) {
+      context.fillText("S", plusX, plusY);
+    } else {
+      context.fillText("+", plusX, plusY);
+    }
 
     context.fillStyle = "#434AFD";
-    context.fillText("–", minusX, minusY);
+
+    if (self.animating) {
+      context.fillText("L", minusX, minusY);
+    } else {
+      context.fillText("–", minusX, minusY);
+    }
 
     context.restore();
 
@@ -248,6 +278,126 @@ SentientWebsite.SubsetSum = function () {
     }
 
     return offset;
+  };
+
+  var bindPaperclip = function () {
+    var paperclip = $(".paperclip");
+    var degrees = 30;
+
+    paperclip.click(function () {
+      if (self.animating) {
+        return;
+      }
+
+      degrees += 30;
+      degrees %= 360;
+
+      paperclip.css("-ms-transform", "rotate(" + degrees + "deg)");
+      paperclip.css("-webkit-transform", "rotate(" + degrees + "deg)");
+      paperclip.css("transform", "rotate(" + degrees + "deg)");
+
+      if (degrees === 30) {
+        animate();
+      }
+    });
+  };
+
+  var animate = function () {
+    canvas.removeEventListener("mousedown", handleEvent);
+    self.animating = true;
+
+    var t = true;
+    var _ = false;
+
+    var startFrame = [
+      [_, t, _, _, _],
+      [_, _, t, _, t],
+      [t, t, t, _, _],
+      [_, _, _, _, t]
+    ];
+
+    self.animationText = [
+      ["e", "n", "t", "i", "e"],
+      ["", "", "", "", "n"],
+      ["a", "", "g", "", "t"],
+      ["", "n", "", "", ""]
+    ];
+
+    self.frame = startFrame;
+
+    setInterval(function () {
+      render();
+
+      var nextFrame = [];
+      for (var y = 0; y < self.frame.length; y += 1) {
+        var row = self.frame[y];
+        var nextRow = [];
+
+        for (var x = 0; x < row.length; x += 1) {
+          var neighbours = neighbourCount(x, y);
+          var nextAlive = isAlive(x, y) && neighbours === 2 || neighbours === 3;
+
+          nextRow.push(nextAlive);
+        }
+
+        nextFrame.push(nextRow);
+      }
+
+
+      if (isEmpty()) {
+        self.frame = startFrame;
+        self.swap = !self.swap;
+      } else {
+        self.frame = nextFrame;
+      }
+    }, 1000);
+  };
+
+  /* jshint maxcomplexity:9 */
+  var neighbourCount = function (x, y) {
+    var count = 0;
+
+    count += isAlive(x - 1, y - 1) ? 1 : 0;
+    count += isAlive(x - 1, y) ? 1 : 0;
+    count += isAlive(x - 1, y + 1) ? 1 : 0;
+    count += isAlive(x, y - 1) ? 1 : 0;
+    count += isAlive(x, y + 1) ? 1 : 0;
+    count += isAlive(x + 1, y - 1) ? 1 : 0;
+    count += isAlive(x + 1, y) ? 1 : 0;
+    count += isAlive(x + 1, y + 1) ? 1 : 0;
+
+    return count;
+  };
+
+  var isAlive = function (x, y) {
+    var width = self.frame[0].length;
+    var height = self.frame.length;
+
+    x %= width;
+    y %= height;
+
+    if (x < 0) {
+      x += width;
+    }
+
+    if (y < 0) {
+      y += height;
+    }
+
+    return self.frame[y][x];
+  };
+
+  var isEmpty = function () {
+    var present = false;
+
+    for (var y = 0; y < self.frame.length; y += 1) {
+      var row = self.frame[y];
+      for (var x = 0; x < row.length; x += 1) {
+        present = present || row[x];
+      }
+    }
+
+    return !present;
   };
 
   var handleEvent = function (event) {
