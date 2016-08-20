@@ -346,6 +346,31 @@ You may optionally provide an **index** and **isPresent** argument:
 
 See [**each**](#each) for more information on what these arguments mean.
 
+##### <a id="reject"></a> [reject](#reject)
+
+Returns an array containing all elements where the function returns **false**.
+
+```ruby
+[1, 2, 3].reject(*odd?)
+#=> [2]
+
+[2, 3, 4, 5].reject(function (element) {
+  return element.square > 10;
+});
+#=> [2, 3]
+```
+
+You may optionally provide an **index** and **isPresent** argument:
+
+```ruby
+[1, 2, 3].reject(function (element, index, isPresent) {
+  # ...
+});
+```
+
+See [**each**](#each) for more information on what these arguments mean.
+
+
 ##### <a id="reverse"></a> [reverse](#reverse)
 
 Reverses an array:
@@ -357,6 +382,30 @@ Reverses an array:
 [[10], [20, 30]].reverse
 #=> [[20, 30], [10]]
 ```
+
+##### <a id="select"></a> [select](#select)
+
+Returns an array containing all elements where the function returns **true**.
+
+```ruby
+[1, 2, 3].select(*odd?)
+#=> [1, 3]
+
+[2, 3, 4, 5].select(function (element) {
+  return element.square > 10;
+});
+#=> [4, 5]
+```
+
+You may optionally provide an **index** and **isPresent** argument:
+
+```ruby
+[1, 2, 3].select(function (element, index, isPresent) {
+  # ...
+});
+```
+
+See [**each**](#each) for more information on what these arguments mean.
 
 ##### <a id="self"></a> [self](#self)
 

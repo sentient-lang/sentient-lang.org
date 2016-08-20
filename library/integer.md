@@ -115,6 +115,28 @@ Returns the absolute value of the integer.
 -5.abs   #=> 5
 ```
 
+##### <a id="between?"></a> [between?](#between?)
+
+Returns **true** if the integer is between two integers (inclusive).
+
+```ruby
+3.between?(1, 5)
+#=> true
+
+5.between?(1, 5)
+#=> true
+
+6.between?(1, 5)
+#=> false
+```
+
+The order of arguments does not matter:
+
+```ruby
+3.between?(5, 1)
+#=> true
+```
+
 ##### <a id="cube"></a> [cube](#cube)
 
 Returns the cube of the integer.
