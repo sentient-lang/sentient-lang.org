@@ -2,8 +2,8 @@ function main () {
   array25<array25<bool>> grid;
   array25<array13<int6>> rowNumbers, columnNumbers;
 
-  rowNumbers = removeSurplus(rowNumbers);
-  columnNumbers = removeSurplus(columnNumbers);
+  rowNumbers = removeZeros(rowNumbers);
+  columnNumbers = removeZeros(columnNumbers);
 
   grid.validate!(rowNumbers);
   grid.transpose.validate!(columnNumbers);
@@ -11,9 +11,9 @@ function main () {
   expose grid, rowNumbers, columnNumbers;
 };
 
-function removeSurplus (numbersArray) {
+function removeZeros (numbersArray) {
   return numbersArray.map(function (numbers) {
-    return numbers.select(*positive?);
+    return numbers.reject(*zero?);
   });
 };
 
