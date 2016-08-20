@@ -1,6 +1,7 @@
 {
   "globals": {
     "$": true,
+    "Image": true,
     "JSON": true,
     "Sentient": true,
     "SentientWebsite": true,

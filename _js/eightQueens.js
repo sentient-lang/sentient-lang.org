@@ -58,7 +58,7 @@ SentientWebsite.EightQueens = function () {
         var x = i * size;
         var y = j * size;
 
-        if ((i + j) % 2 == 0) {
+        if ((i + j) % 2 === 0) {
           context.fillRect(x, y, size, size);
         }
 
@@ -85,10 +85,10 @@ SentientWebsite.EightQueens = function () {
       var xNormalised = queen[0] - 1;
       var yNormalised = queen[1] - 1;
 
-      if (x == xNormalised && y == yNormalised) {
+      if (x === xNormalised && y === yNormalised) {
         return true;
       }
-    };
+    }
   };
 
   var handleEvent = function (event) {

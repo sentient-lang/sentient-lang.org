@@ -79,7 +79,7 @@ SentientWebsite.KnightsTour = function () {
         var x = i * size;
         var y = j * size;
 
-        if ((i + j) % 2 == 0) {
+        if ((i + j) % 2 === 0) {
           context.fillRect(x, y, size, size);
         }
       }
@@ -111,7 +111,7 @@ SentientWebsite.KnightsTour = function () {
 
     if (typeof nextCoordinate === "undefined") {
       nextX = previousX;
-      nextY = previousY
+      nextY = previousY;
     } else {
       nextX = nextCoordinate[0] - 1;
       nextY = nextCoordinate[1] - 1;

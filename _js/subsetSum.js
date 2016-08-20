@@ -237,9 +237,9 @@ SentientWebsite.SubsetSum = function () {
     var offset = 0;
     var length = Math.abs(number).toString().length;
 
-    if (length == 1) {
+    if (length === 1) {
       offset += fontSize / 3;
-    } else if (length == 3) {
+    } else if (length === 3) {
       offset -= fontSize / 3;
     }
 
@@ -309,7 +309,7 @@ SentientWebsite.SubsetSum = function () {
     render();
   };
 
-  var shuffleGrid = function (params) {
+  var shuffleGrid = function () {
     shuffle();
     run();
     render();
