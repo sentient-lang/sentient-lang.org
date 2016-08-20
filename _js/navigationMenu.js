@@ -5,6 +5,7 @@ SentientWebsite.NavigationMenu = function () {
 
   self.initialize = function () {
     highlightCurrentLink();
+    openExamplesIfIntroduction();
     bindHandlers();
 
     $("nav").show();
@@ -19,6 +20,16 @@ SentientWebsite.NavigationMenu = function () {
         toggleVisibility(list);
       }
     });
+  };
+
+  var openExamplesIfIntroduction = function () {
+    var path = window.location.pathname;
+
+    if (path === "/" || path.indexOf("/intro") !== -1) {
+      var examples = $("nav h4")[1];
+      var list = $(examples).next("ul");
+      toggleVisibility(list);
+    }
   };
 
   var bindHandlers = function () {
