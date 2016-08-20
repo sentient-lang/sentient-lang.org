@@ -8,6 +8,8 @@ layout: default
 The following program solves the
 [subset sum problem](https://en.wikipedia.org/wiki/Subset_sum_problem).
 
+<img class="paperclip" src="/images/paperclip.png"/>
+
 ```ruby
 {% include_relative subset-sum.snt %}```
 
@@ -16,9 +18,11 @@ The following program solves the
   SentientWebsite.modulesToLoad.push("SubsetSum");
 </script>
 
+You can click on the grid to cycle through solutions.
+
 ## How does it work?
 
-We [declare](../syntax/declaration) two arrays of five elements. The 'numbers'
+We [declare](../syntax/declaration) two arrays of twenty elements. The 'numbers'
 array contains the numbers in the set which we will [assign](../cli/assign) at
 runtime. The 'members' array contains booleans representing whether the number
 at that index is in the subset.

@@ -1,5 +1,5 @@
-array5<int> numbers;
-array5<bool> members;
+array20<int> numbers;
+array20<bool> members;
 
 sum = 0;
 

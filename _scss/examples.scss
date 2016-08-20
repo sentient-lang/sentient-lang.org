@@ -38,3 +38,29 @@
   cursor: pointer;
   border-radius: 0.1em;
 }
+
+#subset-sum-example {
+  display: none;
+  float: right;
+  background: white;
+  box-shadow: 0.1em 0.2em 0.8em #ddd;
+  border: 0.1em solid #ddd;
+  border-top: 0;
+  cursor: pointer;
+  border-radius: 0.1em;
+  -ms-transform: rotate(1.5deg);
+  -webkit-transform: rotate(1.5deg);
+  transform: rotate(1.5deg);
+}
+
+.paperclip {
+  position: absolute;
+  width: 16px;
+  right: 275px;
+  margin-top: -4px;
+  z-index: 1;
+  -ms-transform: rotate(30deg);
+  -webkit-transform: rotate(30deg);
+  transform: rotate(30deg);
+  display: none;
+}
