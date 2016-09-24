@@ -8,7 +8,7 @@ layout: default
 The following program finds
 [magic squares](https://en.wikipedia.org/wiki/Magic_square).
 
-```ruby
+```sentient
 {% include_relative magic-square.snt %}```
 
 <script>

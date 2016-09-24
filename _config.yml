@@ -2,3 +2,4 @@ exclude: ["CNAME", "Gemfile", "Gemfile.lock", "package.json", "Makefile"]
 sass:
   sass_dir: _scss
   style: compressed
+highlighter: none

@@ -10,12 +10,12 @@ program has run. Any exposed variable can also be **assigned** to a specific
 value before the program runs. This allows you to run a single program with
 different inputs. Here is an example:
 
-```ruby
+```sentient
 expose points;
 ```
 
 You can expose multiple variables at the same time, for example:
 
-```ruby
+```sentient
 expose a, b, c, total;
 ```

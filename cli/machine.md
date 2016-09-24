@@ -7,7 +7,7 @@ layout: default
 
 The 'machine' option instructs Sentient to use a different SAT solver:
 
-```
+```bash
 $ sentient --machine lingeling
 ```
 

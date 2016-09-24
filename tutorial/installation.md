@@ -17,6 +17,6 @@ compiling and running Sentient programs.
 At present, Sentient is officially supported in **Node 0.11 or newer**, but it
 might work with older versions, too. You can check your Node version with:
 
-```
+```bash
 node --version
 ```

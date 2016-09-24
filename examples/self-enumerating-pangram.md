@@ -8,7 +8,7 @@ layout: default
 The following program finds
 [self-enumerating pangrams](https://en.wikipedia.org/wiki/Autogram#Self-enumerating_pangrams).
 
-```ruby
+```sentient
 {% include_relative self-enumerating-pangram.snt.snippet %}```
 
 Here is the

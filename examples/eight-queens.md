@@ -8,7 +8,8 @@ layout: default
 The following program solves the
 [eight queens puzzle](https://en.wikipedia.org/wiki/Eight_queens_puzzle).
 
-```ruby
+
+```sentient
 {% include_relative eight-queens.snt %}```
 
 <script>

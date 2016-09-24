@@ -7,7 +7,7 @@ layout: default
 
 The 'optimise' option instructs Sentient to optimise machine code:
 
-```
+```bash
 $ sentient --optimise program.json > program.min.json
 ```
 

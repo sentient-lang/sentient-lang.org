@@ -9,14 +9,14 @@ Here's an overview of what each of the lines in our 'Hello world' program mean.
 For a more thorough explanation, you may wish to explore the
 **Language syntax**.
 
-```ruby
+```sentient
 int a, b, c
 ```
 
 This line [declares](../syntax/declaration) three integers named '**a**',
 '**b**' and '**c**'. Integers can be both positive and negative numbers.
 
-```ruby
+```sentient
 invariant a + b + c == 10;
 ```
 
@@ -25,7 +25,7 @@ add to **10** and this line specifies this an
 [invariant](../syntax/invariant) of the program, i.e. that this is
 something that must always be **true**.
 
-```ruby
+```sentient
 invariant a > 0, b > 0, c > 0;
 ```
 
@@ -33,7 +33,7 @@ As mentioned above, integers can be negative. This line adds another
 [invariant](../syntax/invariant) that rules out negatives. We didn't need
 to do this, but it serves as an interesting example.
 
-```ruby
+```sentient
 expose a, b, c;
 ```
 

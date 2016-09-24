@@ -7,7 +7,7 @@ layout: default
 
 A comment begins with a '**#**' character and terminates at the end of the line.
 
-```ruby
+```sentient
 # This is a comment.
 ```
 

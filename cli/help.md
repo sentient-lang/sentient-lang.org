@@ -7,7 +7,7 @@ layout: default
 
 Prints usage information:
 
-```
+```text
 $ sentient --help
 
   Usage: sentient [options] [file]

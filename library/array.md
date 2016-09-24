@@ -12,7 +12,7 @@ document contains a reference of all array operators and methods.
 
 Returns **true** if the array on the left is equal to the right.
 
-```ruby
+```sentient
 [1, 2, 3] == [1, 2, 3]    #=> true
 [1, 2, 3] == [1, 2, 4]    #=> false
 ```
@@ -21,7 +21,7 @@ Returns **true** if the array on the left is equal to the right.
 
 Returns **true** if the array on the left is not equal to the right.
 
-```ruby
+```sentient
 [1, 2, 3] != [1, 2, 3]    #=> false
 [1, 2, 3] != [1, 2, 4]    #=> true
 ```
@@ -30,7 +30,7 @@ Returns **true** if the array on the left is not equal to the right.
 
 Fetches the element at an index from the array.
 
-```ruby
+```sentient
 [5, 10, 15].fetch(1)    #=> 10
 ```
 
@@ -42,7 +42,7 @@ have no solutions.
 Returns **true** if the given function returns true for all elements in the
 array.
 
-```ruby
+```sentient
 [1, 3, 5].all?(*odd?)    #=> true
 
 [1, 2, 3].all?(function (e) {
@@ -56,7 +56,7 @@ array.
 Returns **true** if the given function returns true for any element in the
 array.
 
-```ruby
+```sentient
 [1, 2, 3].any?(*even?)    #=> true
 
 [1, 2, 3].any?(function (e) {
@@ -69,7 +69,7 @@ array.
 
 Returns **true** if the index is within the bounds of the array.
 
-```ruby
+```sentient
 [1, 2, 3].bounds?(-1)    #=> false
 [1, 2, 3].bounds?(0)     #=> true
 [1, 2, 3].bounds?(3)     #=> false
@@ -79,7 +79,7 @@ Returns **true** if the index is within the bounds of the array.
 
 Returns a new array populated with the given objects.
 
-```ruby
+```sentient
 buildArray(1, 2, 3)    #=> [1, 2, 3]
 buildArray(true)       #=> [true]
 ```
@@ -96,7 +96,7 @@ Alias for [**length**](#length).
 
 Counts the number of elements for which the given function returns **true**.
 
-```ruby
+```sentient
 [1, 2, 3].countBy(*odd?)     #=> 2
 
 [1, 2, 3].countBy(function (e) {
@@ -109,7 +109,7 @@ Counts the number of elements for which the given function returns **true**.
 
 Iterates through each element in the array.
 
-```ruby
+```sentient
 total = 0;
 
 [1, 2, 3].each(function^ (element) {
@@ -121,7 +121,7 @@ total = 0;
 
 You may optionally provide an **index** argument for the function:
 
-```ruby
+```sentient
 [1, 2, 3].each(function^ (element, index) {
   # index is 0, then 1, then 2
 });
@@ -131,7 +131,7 @@ You may optionally provide an **isPresent** argument for the function. This is t
 cater for cases where the length of the array is undetermined until the program
 runs.
 
-```ruby
+```sentient
 nestedArray = [
   [10],
   [20, 30]
@@ -152,7 +152,7 @@ false when the second element is reached during iteration.
 
 Iterates through all combinations of N elements in the array:
 
-```ruby
+```sentient
 [1, 2, 3].eachCombination(2, function (elements) {
   # Elements:
   #
@@ -164,7 +164,7 @@ Iterates through all combinations of N elements in the array:
 
 You may optionally provide **indexes** and **presence** arguments:
 
-```ruby
+```sentient
 [1, 2, 3].eachCombination(2, function (elements, indexes, presence) {
   # ...
 });
@@ -176,7 +176,7 @@ See [**each**](#each) for more information on what these arguments mean.
 
 Iterates through consecutive elements in the array:
 
-```ruby
+```sentient
 [1, 2, 3, 4].eachCons(2, function (elements) {
   # Elements:
   #
@@ -188,7 +188,7 @@ Iterates through consecutive elements in the array:
 
 You may optionally provide **indexes** and **presence** arguments:
 
-```ruby
+```sentient
 [1, 2, 3].eachCons(2, function (elements, indexes, presence) {
   # ...
 });
@@ -200,7 +200,7 @@ See [**each**](#each) for more information on what these arguments mean.
 
 Iterates through the array N elements at a time:
 
-```ruby
+```sentient
 [1, 2, 3, 4].eachSlice(2, function (elements) {
   # Elements:
   #
@@ -211,7 +211,7 @@ Iterates through the array N elements at a time:
 
 You may optionally provide **indexes** and **presence** arguments:
 
-```ruby
+```sentient
 [1, 2, 3].eachSlice(2, function (elements, indexes, presence) {
   # ...
 });
@@ -223,7 +223,7 @@ See [**each**](#each) for more information on what these arguments mean.
 
 Returns the first element in the array.
 
-```ruby
+```sentient
 [1, 2, 3].first    #=> 1
 ```
 
@@ -235,7 +235,7 @@ If the index lies outside the bounds of the array, 0 or false will be returned
 depending on the type of elements in the array. The second argument returned is
 a boolean that is true if the index is in bounds.
 
-```ruby
+```sentient
 a, b = [5, 10, 15].get(1)     # a: 10, b: true
 a, b = [5, 10, 15].get(-1)    # a: 0,  b: false
 a, b = [5, 10, 15].get(99)    # a: 0,  b: false
@@ -245,7 +245,7 @@ a, b = [5, 10, 15].get(99)    # a: 0,  b: false
 
 Returns **true** if the array includes the given element.
 
-```ruby
+```sentient
 [1, 2, 3].include?(3)    #=> true
 [1, 2, 3].include?(4)    #=> false
 ```
@@ -254,7 +254,7 @@ Returns **true** if the array includes the given element.
 
 Returns the last element in the array.
 
-```ruby
+```sentient
 [1, 2, 3].last    #=> 3
 ```
 
@@ -262,7 +262,7 @@ Returns the last element in the array.
 
 Returns the length of the array.
 
-```ruby
+```sentient
 [1, 2, 3].length    #=> 3
 ```
 
@@ -270,7 +270,7 @@ Returns the length of the array.
 
 Maps a function over each element in an array:
 
-```ruby
+```sentient
 [1, 2, 3].map(function (element) {
   return element * 2;
 });
@@ -282,7 +282,7 @@ Maps a function over each element in an array:
 
 You may optionally provide an **index** argument for the function:
 
-```ruby
+```sentient
 [1, 2, 3].map(function (element, index) {
   return element * index;
 });
@@ -294,7 +294,7 @@ You may optionally provide an **index** argument for the function:
 Returns **true** if none of the elements cause the given function to return
 **true**.
 
-```ruby
+```sentient
 [1, 3].none?(*even?)    #=> true
 
 [1, 2, 3].none?(function (e) {
@@ -308,7 +308,7 @@ Returns **true** if none of the elements cause the given function to return
 Returns **true** if exactly one element causes the given function to return
 **true**.
 
-```ruby
+```sentient
 [1, 3].one?(*even?)          #=> false
 [1, 2, 3].one?(*even?)       #=> true
 [1, 2, 3, 4].one?(*even?)    #=> false
@@ -319,7 +319,7 @@ Returns **true** if exactly one element causes the given function to return
 Combines elements of an array by applying binary function. Returns the
 accumulated value.
 
-```ruby
+```sentient
 [2, 3, 4].reduce(function (accumulator, element) {
   return accumulator * element;
 });
@@ -331,14 +331,14 @@ accumulated value.
 
 Reduce can optionally take an initial value:
 
-```ruby
+```sentient
 [1, 2, 3].reduce(10, *+)
 #=> 16
 ```
 
 You may optionally provide an **index** and **isPresent** argument:
 
-```ruby
+```sentient
 [1, 2, 3].reduce(function (accumulator, element, index, isPresent) {
   # ...
 });
@@ -350,7 +350,7 @@ See [**each**](#each) for more information on what these arguments mean.
 
 Returns an array containing all elements where the function returns **false**.
 
-```ruby
+```sentient
 [1, 2, 3].reject(*odd?)
 #=> [2]
 
@@ -362,7 +362,7 @@ Returns an array containing all elements where the function returns **false**.
 
 You may optionally provide an **index** and **isPresent** argument:
 
-```ruby
+```sentient
 [1, 2, 3].reject(function (element, index, isPresent) {
   # ...
 });
@@ -375,7 +375,7 @@ See [**each**](#each) for more information on what these arguments mean.
 
 Reverses an array:
 
-```ruby
+```sentient
 [1, 2, 3].reverse
 #=> [3, 2, 1]
 
@@ -387,7 +387,7 @@ Reverses an array:
 
 Returns an array containing all elements where the function returns **true**.
 
-```ruby
+```sentient
 [1, 2, 3].select(*odd?)
 #=> [1, 3]
 
@@ -399,7 +399,7 @@ Returns an array containing all elements where the function returns **true**.
 
 You may optionally provide an **index** and **isPresent** argument:
 
-```ruby
+```sentient
 [1, 2, 3].select(function (element, index, isPresent) {
   # ...
 });
@@ -411,7 +411,7 @@ See [**each**](#each) for more information on what these arguments mean.
 
 Returns the array:
 
-```ruby
+```sentient
 [1, 2, 3].self
 #=> [1, 2, 3]
 ```
@@ -424,7 +424,7 @@ Alias for [**length**](#length).
 
 Sums the elements in an array of integers:
 
-```ruby
+```sentient
 [1, 2, 3].sum
 #=> 6
 
@@ -436,7 +436,7 @@ Sums the elements in an array of integers:
 
 Transposes a nested array, swapping columns for rows:
 
-```ruby
+```sentient
 nestedArray = [
   [1, 2, 3],
   [4, 5, 6],
@@ -454,7 +454,7 @@ t = nestedArray.transpose
 
 Transpose works for nested arrays of different lengths:
 
-```ruby
+```sentient
 nestedArray = [
   [1, 2],
   [3, 4, 5],
@@ -477,7 +477,7 @@ If this array is iterated, any gaps will set **isPresent** to false. See
 
 Returns **true** if the array contains unique elements.
 
-```ruby
+```sentient
 [1, 2, 3].uniq?    #=> true
 [1, 2, 1].uniq?    #=> false
 ```
@@ -489,7 +489,7 @@ Equality will be used to check uniqueness.
 Returns **true** if the array contains unique elements when a given function is
 called on the array's elements.
 
-```ruby
+```sentient
 [1, 3].uniqBy?(*odd?)    #=> true
 [1, 3].uniqBy?(*odd?)    #=> false
 ```

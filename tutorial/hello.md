@@ -9,7 +9,7 @@ Our 'Hello, world!' example won't actually print 'Hello, world!'. Instead, we're
 going to be writing a simple program that finds three numbers that add up to
 ten. To begin with, create a file called 'ten.snt' and add the following lines:
 
-```javascript
+```sentient
 int a, b, c;
 
 invariant a + b + c == 10;

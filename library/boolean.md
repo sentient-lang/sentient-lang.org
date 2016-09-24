@@ -12,7 +12,7 @@ document contains a reference of all boolean operators and methods.
 
 Logical AND.
 
-```ruby
+```sentient
 true && true      #=> true
 true && false     #=> false
 false && true     #=> false
@@ -23,7 +23,7 @@ false && false    #=> false
 
 Logical OR.
 
-```ruby
+```sentient
 true || true      #=> true
 true || false     #=> true
 false || true     #=> true
@@ -34,7 +34,7 @@ false || false    #=> false
 
 Returns **true** if the boolean on the left is equal to the right.
 
-```ruby
+```sentient
 true == true      #=> true
 true == false     #=> false
 false == true     #=> false
@@ -45,7 +45,7 @@ false == false    #=> true
 
 Returns **true** if the boolean on the left is not equal to the right.
 
-```ruby
+```sentient
 true != true      #=> false
 true != false     #=> true
 false != true     #=> true
@@ -56,7 +56,7 @@ false != false    #=> false
 
 Performs unary negation.
 
-```ruby
+```sentient
 !true     #=> false
 !false    #=> true
 ```
@@ -65,7 +65,7 @@ Performs unary negation.
 
 Ternary conditional, see [**if**](#if).
 
-```ruby
+```sentient
 true ? 5 : 3     #=> 5
 false ? 5 : 3    #=> 3
 ```
@@ -75,7 +75,7 @@ false ? 5 : 3    #=> 3
 Returns the value on the left if the conditional is **true** and the value on
 the right if the conditional is **false**.
 
-```ruby
+```sentient
 true.if(5, 3)     #=> 5
 false.if(5, 3)    #=> 3
 ```
@@ -87,7 +87,7 @@ irrespective of the condition.
 
 Returns the boolean.
 
-```ruby
+```sentient
 true.self
 #=> true
 ```

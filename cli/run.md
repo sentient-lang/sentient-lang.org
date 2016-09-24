@@ -7,7 +7,7 @@ layout: default
 
 The 'run' option instructs Sentient to run a pre-compiled program:
 
-```
+```bash
 $ sentient --run program.json
 ```
 

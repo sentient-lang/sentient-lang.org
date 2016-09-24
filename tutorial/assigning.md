@@ -24,7 +24,7 @@ For our 'Hello world' program, we could make it more generic! Instead of
 hardcoding the total to **10**, let's introduce a '**target**' and assign it at
 runtime:
 
-```javascript
+```sentient
 int a, b, c, target;
 
 invariant a + b + c == target;

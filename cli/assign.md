@@ -7,7 +7,7 @@ layout: default
 
 The 'assign' option sets exposed variables within a program:
 
-```
+```bash
 $ sentient --assign '{ target: 10 }' program.snt
 ```
 
@@ -20,7 +20,7 @@ assignable. Assignments are specified as a JSON object surrounded by quotes.
 Each variable to be assigned appears as a key of this object. Values can be
 booleans, integers or arrays:
 
-```
+```bash
 $ sentient --assign '{ a: true, b: 123, c: -50 }' program.snt
 
 $ sentient --assign '{ numbers: [1, 2, 3] }' program.snt
@@ -29,13 +29,13 @@ $ sentient --assign '{ numbers: [1, 2, 3] }' program.snt
 Arrays support additional syntax to allow some of their elements to be set,
 whilst leaving others unset. Elements can be marked as 'undefined':
 
-```
+```bash
 $ sentient --assign '{ numbers: [1, undefined, undefined] }' program.snt
 ```
 
 Alternatively, elements can be set by their array index. All other elements will
 be unset. The following is equivalent to the above example:
 
-```
+```bash
 $ sentient --assign '{ numbers: { 0: 1 } }' program.snt
 ```

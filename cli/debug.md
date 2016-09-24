@@ -7,7 +7,7 @@ layout: default
 
 The 'debug' option changes Sentient's log level:
 
-```
+```bash
 $ sentient --debug program.snt
 ```
 

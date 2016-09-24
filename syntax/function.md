@@ -9,7 +9,7 @@ A function is used to combine a sequence of statements so that it may be called
 multiple times throughout a program. Functions also allow names to be given to
 sections of code, improving readability. Here is an example:
 
-```ruby
+```sentient
 function fizzbuzz? (number) {
   divisibleBy3 = number % 3 == 0;
   divisibleBy5 = number % 5 == 0;
@@ -32,7 +32,7 @@ Function names can optionally be suffixed with a single **?** or **!**
 character.  Functions can take any number of arguments and can return any number
 of values. Here is an example:
 
-```ruby
+```sentient
 function payForGoods (cost, balance) {
   balance -= cost;
   overdrawn = balance < 0;
@@ -54,7 +54,7 @@ It is possible to define functions that can access variables outside by using
 the **^** modifier. The following example updates the **balance** variable,
 which appears outside of the defined function:
 
-```ruby
+```sentient
 balance = 1000;
 
 function^ payForGoods (cost) {
@@ -74,14 +74,14 @@ Functions are called by passing arguments within parentheses. You can either
 call functions as part of an assignment or in a statement on their own. This is
 to support cases where functions have side-effects such as this example:
 
-```ruby
+```sentient
 payForGoods(50);
 ```
 
 When functions return more than one value, you can use multiple assignment to
 set those values to variables:
 
-```ruby
+```sentient
 div, mod = divmod(10, 3);
 ```
 
@@ -91,21 +91,21 @@ It is also possible to call functions using a **method** syntax. Any function ca
 be called on any value and that value will be passed as the first argument to
 the function. Here is an example:
 
-```ruby
+```sentient
 div, mod = 10.divmod(3);
 ```
 
 When functions are called as methods, the parentheses are optional unless there
 are additional arguments, for example:
 
-```ruby
+```sentient
 a = 75.fizzbuzz?;
 ```
 
 In fact, almost all syntax in the language is described as method calls on
 values which means that these are all equivalent:
 
-```ruby
+```sentient
 a = 2 + 2;
 a = +(2, 2);
 a = 2.+(2);
@@ -117,7 +117,7 @@ It is possible to pass functions as arguments to other functions using function
 pointers. You can pass any number of pointers to a function. A function pointer
 is denoted by prefixing a **\*** to an argument:
 
-```ruby
+```sentient
 function callTwice (x, *f) {
   return f(f(x));
 };
@@ -132,7 +132,7 @@ a = 5.callTwice(*double);
 Sentient also supports anonymous functions, which can be passed in to other
 functions. Here is an example that adds the numbers in an array:
 
-```ruby
+```sentient
 array5<int> numbers;
 total = 0;
 

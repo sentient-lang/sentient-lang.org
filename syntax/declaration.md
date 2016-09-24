@@ -12,7 +12,7 @@ values of their variables are not determined until the program runs.
 A declaration is comprised of a type definition and the names of one or more
 variables. Here is an example:
 
-```ruby
+```sentient
 int a, b, c;
 ```
 
@@ -21,7 +21,7 @@ range between **-128** and **127**, but this can be made bigger (or smaller) by
 specifying the number of bits after the type. An **int10**, for example, will
 range between **-512** and **511**.
 
-```ruby
+```sentient
 int10 a, b, c;
 ```
 
@@ -30,7 +30,7 @@ specified in the type definition in addition to the type of its elements. Arrays
 are **homogeneous**, which means that its elements must all be the same type.
 Here are some examples:
 
-```ruby
+```sentient
 array3<bool> myArray;
 
 array4<int> fourInts;
@@ -42,6 +42,6 @@ Nested arrays are supported. These declarations look a little more complicated.
 The example below declares a structure that would be suitable for holding some
 coordinates:
 
-```ruby
+```sentient
 array10<array2<int>> points;
 ```

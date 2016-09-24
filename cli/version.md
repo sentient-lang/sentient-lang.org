@@ -7,7 +7,7 @@ layout: default
 
 Prints the version number:
 
-```
+```bash
 $ sentient --version
 1.0.0
 ```

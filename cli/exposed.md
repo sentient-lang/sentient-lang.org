@@ -8,7 +8,7 @@ layout: default
 The 'exposed' option prints information about [exposed](../syntax/exposure)
 variables:
 
-```
+```json
 $ sentient --exposed program.json
 {
   "a": {

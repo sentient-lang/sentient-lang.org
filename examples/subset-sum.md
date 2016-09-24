@@ -10,7 +10,7 @@ The following program solves the
 
 <img class="paperclip" src="/images/paperclip.png"/>
 
-```ruby
+```sentient
 {% include_relative subset-sum.snt %}```
 
 <script>

@@ -12,7 +12,7 @@ document contains a reference of all integer operators and methods.
 
 Performs addition.
 
-```ruby
+```sentient
 5 + 3    #=> 8
 ```
 
@@ -20,7 +20,7 @@ Performs addition.
 
 Performs subtraction.
 
-```ruby
+```sentient
 5 - 3    #=> 2
 ```
 
@@ -28,7 +28,7 @@ Performs subtraction.
 
 Performs multiplication.
 
-```ruby
+```sentient
 5 * 3    #=> 15
 ```
 
@@ -44,7 +44,7 @@ Returns the remainder after division. See [**divmod**](#divmod).
 
 Performs unary negation.
 
-```ruby
+```sentient
 -(2 + 2)    #=> -4
 ```
 
@@ -52,7 +52,7 @@ Performs unary negation.
 
 Returns **true** if the integer on the left is equal to the right.
 
-```ruby
+```sentient
 2 == 2    #=> true
 2 == 3    #=> false
 ```
@@ -61,7 +61,7 @@ Returns **true** if the integer on the left is equal to the right.
 
 Returns **true** if the integer on the left is not equal to the right.
 
-```ruby
+```sentient
 2 != 2    #=> false
 2 != 3    #=> true
 ```
@@ -70,7 +70,7 @@ Returns **true** if the integer on the left is not equal to the right.
 
 Returns **true** if the integer on the left is less than the right.
 
-```ruby
+```sentient
 2 < 1    #=> false
 2 < 2    #=> false
 2 < 3    #=> true
@@ -80,7 +80,7 @@ Returns **true** if the integer on the left is less than the right.
 
 Returns **true** if the integer on the left is less than or equal to the right.
 
-```ruby
+```sentient
 2 <= 1    #=> false
 2 <= 2    #=> true
 2 <= 3    #=> true
@@ -90,7 +90,7 @@ Returns **true** if the integer on the left is less than or equal to the right.
 
 Returns **true** if the integer on the left is greater than the right.
 
-```ruby
+```sentient
 2 > 1    #=> true
 2 > 2    #=> false
 2 > 3    #=> false
@@ -100,7 +100,7 @@ Returns **true** if the integer on the left is greater than the right.
 
 Returns **true** if the integer on the left is greater than or equal to the right.
 
-```ruby
+```sentient
 2 >= 1    #=> true
 2 >= 2    #=> true
 2 >= 3    #=> false
@@ -110,7 +110,7 @@ Returns **true** if the integer on the left is greater than or equal to the righ
 
 Returns the absolute value of the integer.
 
-```ruby
+```sentient
 5.abs    #=> 5
 -5.abs   #=> 5
 ```
@@ -119,7 +119,7 @@ Returns the absolute value of the integer.
 
 Returns **true** if the integer is between two integers (inclusive).
 
-```ruby
+```sentient
 3.between?(1, 5)
 #=> true
 
@@ -132,7 +132,7 @@ Returns **true** if the integer is between two integers (inclusive).
 
 The order of arguments does not matter:
 
-```ruby
+```sentient
 3.between?(5, 1)
 #=> true
 ```
@@ -141,7 +141,7 @@ The order of arguments does not matter:
 
 Returns the cube of the integer.
 
-```ruby
+```sentient
 3.cube    #=> 27
 ```
 
@@ -149,7 +149,7 @@ Returns the cube of the integer.
 
 Performs integer Euclidean division, returning both quotient and remainder.
 
-```ruby
+```sentient
 a, b = 9.divmod(2)    # a: 4, b: 1
 ```
 
@@ -159,7 +159,7 @@ The divisor must not be zero, else the program will have no solutions.
 
 Iterates from a start integer downto an end integer.
 
-```ruby
+```sentient
 total = 0;
 
 5.downto(3, function^ (i) {
@@ -175,7 +175,7 @@ This method only supports [integer literals](../library/literals).
 
 Returns **true** if the integer is even.
 
-```ruby
+```sentient
 0.even?    #=> true
 1.even?    #=> false
 2.even?    #=> true
@@ -185,7 +185,7 @@ Returns **true** if the integer is even.
 
 Returns **true** if the integer is less than zero.
 
-```ruby
+```sentient
 -1.negative?    #=> true
 0.negative?     #=> false
 ```
@@ -198,7 +198,7 @@ Alias for [**succ**](#succ).
 
 Returns **true** if the integer is odd.
 
-```ruby
+```sentient
 0.odd?    #=> false
 1.odd?    #=> true
 2.odd?    #=> false
@@ -208,7 +208,7 @@ Returns **true** if the integer is odd.
 
 Returns **true** if the integer is greater than zero.
 
-```ruby
+```sentient
 1.positive?     #=> true
 0.positive?     #=> false
 ```
@@ -217,7 +217,7 @@ Returns **true** if the integer is greater than zero.
 
 Returns the integer's predecessor.
 
-```ruby
+```sentient
 3.pred    #=> 2
 ```
 
@@ -229,7 +229,7 @@ Alias for [**pred**](#pred).
 
 Returns the integer.
 
-```ruby
+```sentient
 123.self
 #=> 123
 ```
@@ -238,7 +238,7 @@ Returns the integer.
 
 Returns the square of the integer.
 
-```ruby
+```sentient
 3.square    #=> 9
 ```
 
@@ -246,7 +246,7 @@ Returns the square of the integer.
 
 Returns the integer's successor.
 
-```ruby
+```sentient
 3.succ    #=> 4
 ```
 
@@ -254,7 +254,7 @@ Returns the integer's successor.
 
 Iterates up to one less than the integer, starting from 0.
 
-```ruby
+```sentient
 total = 0;
 
 5.times(function^ (i) {
@@ -270,7 +270,7 @@ This method only supports [integer literals](../library/literals).
 
 Iterates from a start integer upto an end integer.
 
-```ruby
+```sentient
 total = 0;
 
 3.upto(5, function^ (i) {
@@ -286,7 +286,7 @@ This method only supports [integer literals](../library/literals).
 
 Returns **true** if the integer is zero.
 
-```ruby
+```sentient
 0.zero?    #=> true
 1.zero?    #=> false
 ```

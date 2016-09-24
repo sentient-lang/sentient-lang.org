@@ -8,7 +8,7 @@ layout: default
 Some functions in Sentient's standard library only support integer literals. For
 example:
 
-```ruby
+```sentient
 # Supported:
 
 3.upto(5, function (i) {
@@ -36,7 +36,7 @@ iterations should be performed; it is not possible in general.
 
 To understand why, consider this example:
 
-```ruby
+```sentient
 # Not supported:
 
 int a, b;

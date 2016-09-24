@@ -8,7 +8,7 @@ layout: default
 The 'assign-file' option works in the same way as [assign](./assign) but reads
 from a file:
 
-```
+```bash
 $ sentient --assign-file assignments.json program.snt
 ```
 

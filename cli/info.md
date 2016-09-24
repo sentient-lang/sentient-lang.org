@@ -7,7 +7,7 @@ layout: default
 
 The 'info' option changes Sentient's log level:
 
-```
+```bash
 $ sentient --info program.snt
 ```
 

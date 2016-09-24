@@ -7,7 +7,7 @@ layout: default
 
 The 'compile' option instructs Sentient to compile the program to machine code:
 
-```
+```bash
 $ sentient --compile program.snt > program.json
 ```
 

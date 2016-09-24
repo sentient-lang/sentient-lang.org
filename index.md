@@ -20,7 +20,7 @@ subset sum problem, we just describe *what* it is.
 
 <img class="paperclip" src="/images/paperclip.png"/>
 
-```ruby
+```sentient
 {% include_relative examples/subset-sum.snt %}```
 
 <script>

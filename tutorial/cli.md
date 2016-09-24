@@ -15,7 +15,7 @@ This will present the various options provided by the executable. As you can
 see, Sentient supports the compilation and running of programs as well as a few
 other things, which we'll come to later.
 
-```
+```text
 Usage: sentient [options] [file]
 
 Sentient Language Compiler and Runtime, Version 1.0.0

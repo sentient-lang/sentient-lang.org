@@ -7,7 +7,7 @@ layout: default
 
 The 'source' option prints the original source code of a pre-compiled program:
 
-```
+```bash
 $ sentient --source program.json > program.snt
 ```
 
