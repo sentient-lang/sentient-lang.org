@@ -2,7 +2,7 @@
 
 SentientWebsite.ModuleLoader = function () {
   var self = this;
-  var url = "https://sentient-lang.github.io/sentient-lang/bin/sentient.js";
+  var url = "https://cdnjs.cloudflare.com/ajax/libs/sentient-lang/0.0.0-alpha.41/sentient.js";
 
   self.initialize = function () {
     if (SentientWebsite.loadSentient) {
