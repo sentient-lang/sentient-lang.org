@@ -1,0 +1,33 @@
+function main() {
+  array7<array4<int>> rectangles;
+  int width, height;
+
+  rectangles.eachCombination(2, function (arr) {
+    invariant !arr[0].overlap?(arr[1]);
+  });
+
+  area = 0;
+
+  rectangles.each(function^ (s) {
+    invariant s.top >= 0 && s.left >= 0;
+    invariant s.bottom <= height && s.right <= width;
+    invariant s.top < s.bottom && s.left < s.right;
+
+    area += (s.right - s.left) * (s.bottom - s.top);
+  });
+
+  invariant area == (width * height);
+  expose rectangles, width, height;
+};
+
+function overlap? (a, b) {
+  return a.left < b.right && a.right > b.left
+      && a.top < b.bottom && a.bottom > b.top;
+};
+
+function left (r) { return r[0]; };
+function top (r) { return r[1]; };
+function right (r) { return r[2]; };
+function bottom (r) { return r[3]; };
+
+main();
