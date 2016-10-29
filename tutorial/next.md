@@ -13,4 +13,4 @@ Here are some recommendations for where to go next:
 
 \- Check out some [example programs](../examples/magic-square)
 
-\- Try out the [JavaScript API](../api/overview)
+\- Try some [practice exercises](./exercises)
