@@ -1,0 +1,33 @@
+function main () {
+  int11 a, b, c;
+
+  a = a.square;
+  b = b.square;
+  c = c.square;
+
+  invariant a.concatenate(b) == c;
+  invariant [a, b, c].all?(*positive?);
+  invariant c < 1000000;
+
+  expose a, b, c;
+};
+
+function concatenate (a, b) {
+  return multiplier(b) * a + b;
+};
+
+function multiplier (n) {
+  multiplier = (n < 10).if(10, # ten
+               (n < 100).if(100, # hundred
+               (n < 1000).if(1000, # thousand
+               (n < 10000).if(10000, # ten thousand
+               (n < 100000).if(100000, # hundred thousand
+               (n < 1000000).if(1000000, # million
+                -1))))));
+
+  invariant multiplier != -1;
+
+  return multiplier;
+};
+
+main();
