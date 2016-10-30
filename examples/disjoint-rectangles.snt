@@ -1,23 +1,27 @@
 function main() {
+  int gridWidth, gridHeight;
+
   array7<array4<int>> rectangles;
-  int width, height;
+  array7<int> areas;
 
   rectangles.eachCombination(2, function (arr) {
     invariant !arr[0].overlap?(arr[1]);
   });
 
-  area = 0;
+  rectangles.each(function^ (s, index) {
+    invariant s.top >= 0, s.left >= 0;
+    invariant s.bottom <= gridHeight, s.right <= gridWidth;
+    invariant s.top < s.bottom, s.left < s.right;
 
-  rectangles.each(function^ (s) {
-    invariant s.top >= 0 && s.left >= 0;
-    invariant s.bottom <= height && s.right <= width;
-    invariant s.top < s.bottom && s.left < s.right;
+    width = s.right - s.left;
+    height = s.bottom - s.top;
 
-    area += (s.right - s.left) * (s.bottom - s.top);
+    invariant areas[index] == width * height;
   });
 
-  invariant area == (width * height);
-  expose rectangles, width, height;
+  invariant areas.sum == gridWidth * gridHeight;
+
+  expose gridWidth, gridHeight, rectangles, areas;
 };
 
 function overlap? (a, b) {

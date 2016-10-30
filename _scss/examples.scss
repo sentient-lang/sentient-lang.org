@@ -65,3 +65,19 @@
   display: none;
   cursor: pointer;
 }
+
+#disjoint-rectangles-example {
+  display: none;
+  float: right;
+  margin-top: 1em;
+  margin-right: 1.8em;
+  background: white;
+  cursor: pointer;
+  box-shadow: 0.1em 0.1em 0.5em #aaa;
+  -ms-transform: rotate(45deg);
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
+  position: relative;
+  right: 1.5em;
+  top: 2em;
+}
