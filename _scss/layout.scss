@@ -161,3 +161,9 @@ footer {
     margin-left: 22.5em;
   }
 }
+
+@media only screen and (max-width: 72em) {
+  .github-corner {
+    display: none;
+  }
+}
