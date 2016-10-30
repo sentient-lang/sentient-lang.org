@@ -1,3 +1,5 @@
+/* jshint maxlen: 100 */
+
 "use strict";
 
 SentientWebsite.ModuleLoader = function () {
