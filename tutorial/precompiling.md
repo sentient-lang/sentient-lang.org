@@ -8,7 +8,7 @@ layout: default
 So far, we've been compiling and running programs in a single step. This works
 well for simple programs, but usually you'll want to pre-compile programs
 beforehand. This lets you do more of the work upfront, which speeds up programs
-at when they run:
+when they run:
 
 ```bash
 sentient ten.snt --compile > ten.json
