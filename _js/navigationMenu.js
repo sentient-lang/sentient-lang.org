@@ -5,7 +5,7 @@ SentientWebsite.NavigationMenu = function () {
 
   self.initialize = function () {
     highlightCurrentLink();
-    openExamplesIfIntroduction();
+    openSuggestedItemsIfIntroduction();
     bindHandlers();
 
     $("nav").show();
@@ -22,13 +22,15 @@ SentientWebsite.NavigationMenu = function () {
     });
   };
 
-  var openExamplesIfIntroduction = function () {
+  var openSuggestedItemsIfIntroduction = function () {
     var path = window.location.pathname;
 
     if (path === "/" || path.indexOf("/intro") !== -1) {
-      var examples = $("nav h4")[1];
-      var list = $(examples).next("ul");
-      toggleVisibility(list);
+      var recorded = $("nav h4")[1];
+      var examples = $("nav h4")[2];
+
+      toggleVisibility($(recorded).next("ul"));
+      toggleVisibility($(examples).next("ul"));
     }
   };
 
