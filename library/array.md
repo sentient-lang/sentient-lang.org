@@ -314,6 +314,35 @@ Returns **true** if exactly one element causes the given function to return
 [1, 2, 3, 4].one?(*even?)    #=> false
 ```
 
+##### <a id="push"></a> [push](push)
+
+Returns a new array containing the original elements with a new element added to
+the end. Does not mutate the original array.
+
+```sentient
+[1, 2].push(3)
+#=> [1, 2, 3]
+
+[false].push(true).push(true)
+#=> [false, true, true]
+```
+
+Push can be used to flatten an array:
+
+```sentient
+flat = [];
+
+[[1, 2], [3, 4]].each(function^ (nested) {
+  nested.each(function^ (element) {
+    flat = flat.push(element);
+  });
+});
+
+# flat: [1, 2, 3, 4]
+```
+
+In this case, the variable is re-assigned, not mutated.
+
 ##### <a id="reduce"></a> [reduce](#reduce)
 
 Combines elements of an array by applying binary function. Returns the
