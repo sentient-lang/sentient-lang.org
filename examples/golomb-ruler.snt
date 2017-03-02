@@ -1,0 +1,42 @@
+function main () {
+  array6<int> ruler;
+  int limit;
+
+  invariant ruler.distances.uniq?;
+  invariant ruler.ascending?;
+  invariant ruler.first.zero?;
+  invariant ruler.firstDist < ruler.lastDist;
+  invariant ruler.last < limit;
+
+  expose ruler, limit;
+};
+
+function distances (ruler) {
+  arr = [];
+
+  ruler.eachCombination(2, function^ (pair) {
+    arr = arr.push(pair.last - pair.first);
+  });
+
+  return arr;
+};
+
+function ascending? (ruler) {
+  asc = true;
+
+  ruler.eachCons(2, function^ (pair) {
+    asc &&= pair.first < pair.last;
+  });
+
+  return asc;
+};
+
+function firstDist (ruler) {
+  return ruler[1] - ruler[0];
+};
+
+function lastDist (ruler) {
+  return ruler[ruler.length - 1] - ruler[ruler.length - 2];
+};
+
+main();
