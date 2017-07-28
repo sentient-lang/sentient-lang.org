@@ -1,0 +1,90 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Domain Packing</title>
+	<link href="https://sentient-lang.github.io/prism-sentient/sentient.prism.css" rel="stylesheet" />
+	<style>
+.container {
+width: 60em;
+}
+	</style>
+</head>
+<body>
+<div class="container">
+<pre><code class="language-sentient"># I have a problem at work that I _think_ is the Knapsack Problem but perhaps
+# someone here can help me research/find a heuristic solution: we have access
+# to the &lt;redacted&gt; and get a finite number of “rules” we can use (e.g. 1000)
+# and each rule can only be 1024 characters long and have a maximum of 30
+# operators in them (e.g. “foo OR bar OR baz”), we have a list of domains
+# (e.g. example.com, example.org) we want to pack domains into rules as
+# efficiently as possible in the minimum number of rules.
+
+# Here's an attempt at a Sentient program to solve the decision version of
+# this problem, i.e. Can 100 domains fit into 5 rules?
+# You could then ratchet the number of rules down by binary search to find
+# the minimum number of rules.
+
+# Some constants of the problem.
+maxLength = 1024;
+maxOrs = 30;
+orLength = 4;
+
+# An array containing the length of each domain.
+array100&lt;int&gt; domains;
+
+# A 2D array containing whether each domain is a member of each rule.
+# The number of rules can be reduced to see if the problem can be satisfied with
+# fewer rules. The number of members should match the number of domains.
+array5&lt;array10&lt;bool&gt;&gt; ruleMembers;
+
+# All domain lengths must be positive.
+domains.each(function (length) {
+  invariant length.positive?;
+});
+
+# Track how many domains have been allocated to rules.
+accountedFor = 0;
+
+# Go through the members of each rule.
+ruleMembers.each(function^ (members, rule) {
+  numberOfDomains = 0;
+  lengthOfRule = 0;
+
+  # Go through all the domains.
+  domains.each(function^ (length, index) {
+    # Check whether the current domain is a member of the rule.
+    isMember = members[index];
+
+    # If it is, increment the number of domains and add to the rule length.
+    numberOfDomains += isMember ? 1 : 0;
+    lengthOfRule += isMember ? length : 0;
+  });
+
+  # Add the ' OR ' lengths to the rule length.
+  numberOfOrs = numberOfDomains - 1;
+  lengthOfRule += numberOfOrs * orLength;
+
+  # The rule should not exceed 1024 characters.
+  invariant lengthOfRule &lt;= maxLength;
+
+  # The rule should not contain more than 30 ORs.
+  invariant numberOfOrs &lt;= maxOrs;
+
+  # These domains are now accounted for.
+  accountedFor += numberOfDomains;
+});
+
+# All domains should now be accounted for.
+invariant accountedFor == domains.count;
+
+# Allow the domains to be set at runtime.
+# Return the rule members as output.
+expose domains, ruleMembers;
+</code></pre>
+</div>
+<script src="https://sentient-lang.github.io/prism-sentient/demo/prism.js"></script>
+<script src="https://sentient-lang.github.io/prism-sentient/sentient.prism.js"></script>
+</body>
+</html>
+
