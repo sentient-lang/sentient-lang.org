@@ -34,7 +34,7 @@ programs on a [command-line](cli/overview) or [in a browser](api/overview).
 Sentient can integrate with web applications or node modules alike.
 
 Sentient is an [experimental](intro/experimental) programming language that was
-created by [Chris Patuzzo](https://twitter.com/cpatuzzo) as an exploration of
+created by [Chris Patuzzo](https://twitter.com/chrispatuzzo) as an exploration of
 declarative programming. It's still in development and has a few rough edges.
 You can listen to the story of its inception on the
 [Why Are Computers](http://whyarecomputers.com/4) podcast.

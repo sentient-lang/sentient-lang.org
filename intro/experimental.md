@@ -6,7 +6,7 @@ layout: default
 # Sentient is experimental
 
 Sentient is an experimental programming language. It was created by
-[Chris Patuzzo](https://twitter.com/cpatuzzo) out of desire to create high-level
+[Chris Patuzzo](https://twitter.com/chrispatuzzo) out of desire to create high-level
 abstractions for declarative programming. It solves a very specific kind of
 problem and you probably aren't go to write your next web app with it.
 
