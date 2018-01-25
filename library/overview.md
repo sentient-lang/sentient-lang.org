@@ -12,5 +12,5 @@ called on any variable or expression. For more information about
 [call functions](../syntax/function#calling-functions), please refer to
 the **Language syntax**.
 
-This section also includes a note about [integer literals](literal) which are a
+This section also includes a note about [integer literals](literals) which are a
 limitation of some functions in the standard library.
