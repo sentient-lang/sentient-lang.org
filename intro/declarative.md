@@ -6,8 +6,8 @@ layout: default
 # Sentient is declarative
 
 Sentient is a declarative programming language, similar to
-[Prolog](https://en.wikipedia.org/wiki/Prolog) and
-[miniKanren](http://minikanren.org/). Programs are descriptions of problems,
+[Prolog](https://en.wikipedia.org/wiki/Prolog),
+[miniKanren](http://minikanren.org/) and [Alloy](https://en.wikipedia.org/wiki/Alloy_(specification_language)). Programs are descriptions of problems,
 rather than precise sets of instructions for the computer to follow. Sentient
 changes how you think about programming.
 
