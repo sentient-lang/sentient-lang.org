@@ -9,7 +9,7 @@ COMPILED := $(addprefix compiled/,$(notdir $(EXAMPLES:.snt=.json)))
 all: lint compile
 
 lint: node_modules
-	jshint _js
+	npx jshint _js
 
 compile: node_modules $(COMPILED)
 
@@ -17,7 +17,7 @@ compiled/%.json: examples/%.snt
 	sentient -c -o $^ > $@
 
 node_modules:
-	npm install
+	yarn
 
 clean:
 	rm -rf node_modules
