@@ -19,7 +19,7 @@ SentientWebsite.DisjointRectangles = function () {
     "rgba(24,224,138,0.6)",
     "rgba(67,74,253,0.6)",
     "rgba(153,153,153,0.6)",
-    "rgba(248,116,243,0.6)",
+    "rgba(248,116,243,0.6)"
   ];
 
   self.initialize = function () {
@@ -60,10 +60,10 @@ SentientWebsite.DisjointRectangles = function () {
       var h = height * scale + 1;
 
       $(container).prepend(
-        "<canvas id='disjoint-rectangles-example' width='"+w+"' height='"+h+"'></canvas>"
+        "<canvas id='rectangles-example' width='"+w+"' height='"+h+"'></canvas>"
       );
 
-      canvas = $("#disjoint-rectangles-example")[0];
+      canvas = $("#rectangles-example")[0];
       context = canvas.getContext("2d");
       context.translate(0.5, 0.5);
       canvas.addEventListener("mousedown", handleEvent);
